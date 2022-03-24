@@ -6,7 +6,7 @@ from constants import *
 
 class Menu:
     def __init__(self):
-        self.screen_size = (800, 800)
+        self.screen_size = (800, 640)
         self.screen = None
         self.screen_to_render = 'main_menu'
 
@@ -23,16 +23,16 @@ class Menu:
         # Adicionar butões estáticos
         self.text = {
             'main_menu': [
-                Label('Math Snake', (400, 200), 36),
-                Label('Dificuldade', (400, 650), 24)
+                Label('Math Snake', (400, 100), 36),
+                Label('Dificuldade', (400, 300), 24)
             ],
             'help_menu': [
-                Label('Ajuda', (400, 200), 36),
-                Label(TXT_AJUDA, (40, 300), 16, multiline=True)
+                Label('Ajuda', (400, 50), 30),
+                Label(TXT_AJUDA, (40, 100), 16, multiline=True)
             ],
             'credits_menu': [
-                Label('Créditos', (400, 200), 36),
-                Label(TXT_CREDITOS, (50, 300), 16, multiline=True)
+                Label('Créditos', (400, 50), 30),
+                Label(TXT_CREDITOS, (50, 100), 16, multiline=True)
             ]
         }
 
@@ -40,14 +40,14 @@ class Menu:
             'main_menu': [
                 DefaultDynButton('Ajuda', (0, 0)),
                 DefaultDynButton('Créditos', (680, 0)),
-                DynButton('Jogar', (300, 100), (400, 350), 32, WHITE, BLUE, BLACKER_BLUE, RED, pos_type='center'),
-                FontChangeDynButton((200, 70), (400, 720), 24, WHITE, BLUE, BLACKER_BLUE, RED, pos_type='center')
+                DynButton('Jogar', (250, 60), (400, 170), 32, WHITE, BLUE, BLACKER_BLUE, RED, pos_type='center'),
+                FontChangeDynButton((180, 50), (400, 370), 22, WHITE, BLUE, BLACKER_BLUE, RED, pos_type='center')
             ],
             'help_menu': [
-                DefaultDynButton('Voltar', (680, 740))
+                DefaultDynButton('Voltar', (680, 580))
             ],
             'credits_menu': [
-                DefaultDynButton('Voltar', (680, 740))
+                DefaultDynButton('Voltar', (680, 580))
             ]
         }
 
