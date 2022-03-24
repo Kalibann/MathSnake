@@ -9,7 +9,6 @@ if __name__ == '__main__':
             print(command)
 
         elif command == 'start_game_Somador':
-            print('entrou')
             game = MathSnake(0)
             game.initialize_screen()
             game.initialize_game()
