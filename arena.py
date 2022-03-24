@@ -46,13 +46,13 @@ class Arena:
                 self.arena.append((x, y))
 
         self.arena_sprites = {
-            0: pygame.image.load(r'arena/arena.png'),
+            0: pygame.image.load(r'arena/arena0.png'),
             1: pygame.image.load(r'arena/arena1.png'),
             2: pygame.image.load(r'arena/arena2.png')
         }
 
         self.wall_sprites = {
-            0: pygame.image.load(r'arena/wall.png'),
+            0: pygame.image.load(r'arena/wall0.png'),
             1: pygame.image.load(r'arena/wall1.png'),
             2: pygame.image.load(r'arena/wall2.png')
         }

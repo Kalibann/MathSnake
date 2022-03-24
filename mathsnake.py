@@ -1,3 +1,5 @@
+import random
+
 import pygame
 from pygame.locals import *
 from snake import Snake
@@ -11,8 +13,13 @@ class MathSnake:
     SCREEN_W = 800
     SCREEN_H = 640
     COORD_ARENA_X = (120, 520 - SNAKE_PX)
-    COORD_ARENA_Y = (160, 560 - SNAKE_PX)
+    COORD_ARENA_Y = (120, 520 - SNAKE_PX)
     ARENA = 400
+    INFO_LABEL = (540, 40)
+    QUESTION_LABEL = (40, 560)
+    A_LABEL = (320, 560)
+    B_LABEL = (480, 560)
+    C_LABEL = (640, 560)
 
     # Opções de movimento da cobrinha
     UP = 0
@@ -25,8 +32,8 @@ class MathSnake:
     WHITE = (255, 255, 255)
 
     # Constantes relacionadas às ações das frutas
-    CLOCK_DEFAULT = 3
-    CLOCK_FAST = 4
+    CLOCK_DEFAULT = 4
+    CLOCK_FAST = 6
     CLOCK_SLOW = 2
     TIME_TO_ANSWER_DEFAULT = 5.0
     TIME_TO_ANSWER_SLOW = 7.0
@@ -40,10 +47,15 @@ class MathSnake:
 
         self.clock = pygame.time.Clock()
         self.clock_value = self.CLOCK_DEFAULT
+        self.time_to_answer = self.TIME_TO_ANSWER_DEFAULT
+        self.score_increment = self.SCORE_INCREMENT_DEFAULT
 
         self.score = 0
         self.level = 2
         self.screen = None
+
+        self.paused = False
+        self.pending_action = False
 
     @staticmethod
     def colision(block0, block1):
@@ -54,18 +66,18 @@ class MathSnake:
         pygame.display.set_caption('MathSnake')
         self.screen = pygame.display.set_mode((self.SCREEN_W, self.SCREEN_H))
 
-        if not self.level:
-            background = pygame.image.load(r'background/bg.png')
-        elif self.level == 1:
-            background = pygame.image.load(r'background/bg1.png')
-        elif self.level == 2:
-            background = pygame.image.load(r'background/bg2.png')
-        elif self.level == 3:
-            background = pygame.image.load(r'background/bg3.png')
-        else:
-            background = pygame.image.load(r'background/bg4.png')
+        background = pygame.image.load(f'background/bg{str(self.level)}.png')
+        question_label = pygame.image.load(f'labels/question_label{str(self.level)}.png')
+        answer_label = pygame.image.load(f'labels/answer_label{str(self.level)}.png')
+        info_label = pygame.image.load(f'labels/info_label{str(self.level)}.png')
 
         self.screen.blit(background, (0, 0))
+
+        self.screen.blit(question_label, self.QUESTION_LABEL)
+        self.screen.blit(answer_label, self.A_LABEL)
+        self.screen.blit(answer_label, self.B_LABEL)
+        self.screen.blit(answer_label, self.C_LABEL)
+        self.screen.blit(info_label, self.INFO_LABEL)
 
     def game_events(self):
         for event in pygame.event.get():
@@ -75,7 +87,7 @@ class MathSnake:
                 quit()
 
             # Trocar a direção da cobrinha através do teclado
-            if event.type == KEYDOWN and self.snake.switch_direction:
+            if event.type == KEYDOWN and self.snake.switch_direction and not self.paused:
                 if event.key == K_UP and self.snake.current_direction != self.DOWN:
                     self.snake.current_direction = self.UP
                     self.snake.switch_direction = False
@@ -93,11 +105,12 @@ class MathSnake:
         # Ação de comer a fruta
         if self.colision(self.snake.snake[0], self.fruit.fruit_pos):
             self.fruit.fruit_pos = Fruit.on_grid_random(self.arena.arena, self.snake.snake)
-            self.fruit.fruit_index = Fruit.random_fruit()
+            self.fruit.current_fruit = self.fruit.random_fruit()
             self.snake.snake.append((0, 0))
             self.snake.directions_list.append(self.snake.current_direction)
-            self.score += 1
+            self.score += self.score_increment
             self.snake.len_snake += 1
+            self.pending_action = True
             print(f'Pontuação: {self.score}')
 
     def snake_movements(self):
@@ -138,11 +151,11 @@ class MathSnake:
             self.screen.blit(self.arena.wall_sprites[self.level], pos)
 
         # Preenchimento da fruta
-        self.screen.blit(self.fruit.fruit_sprites[self.fruit.fruit_index], self.fruit.fruit_pos)
+        self.screen.blit(self.fruit.fruit_sprites[self.fruit.current_fruit], self.fruit.fruit_pos)
 
         # Preenchimento da cobrinha
         for i, pos in enumerate(self.snake.snake):
-            if not i:
+            if i == 0:
                 if self.snake.directions_list[i] == self.UP:
                     self.screen.blit(self.snake.snake_sprites['snake_head_up'], pos)
                 elif self.snake.directions_list[i] == self.DOWN:
@@ -188,9 +201,42 @@ class MathSnake:
                         else:
                             self.screen.blit(self.snake.snake_sprites['snake_body_br'], pos)
 
+    def fruit_action(self):
+        if self.fruit.previous_fruit == 0:
+            print('# Responder pergunta #')
+            #self.paused = True
+            self.reset_fruit_action()
+        elif self.fruit.previous_fruit == 1:
+            choice = random.choice(range(0, 2))
+            if choice == 0:
+                print('# Bônus 1 -> Incremento no próximo tempo de resposta #')
+                self.time_to_answer = self.TIME_TO_ANSWER_SLOW
+            else:
+                print(' # Bônus 2 -> Incremento no score da próxima resposta #')
+                self.score_increment = self.SCORE_INCREMENT_BONUS
+        else:
+            choice = random.choice(range(0, 2))
+            if choice == 0:
+                print('# Incrementar velocidade #')
+                self.clock_value = self.CLOCK_FAST
+            else:
+                self.clock_value = self.CLOCK_SLOW
+                print('# Decrementar velocidade #')
+        self.pending_action = False
+
+    def reset_fruit_action(self):
+        self.clock_value = self.CLOCK_DEFAULT
+        self.score_increment = self.SCORE_INCREMENT_DEFAULT
+        self.time_to_answer = self.TIME_TO_ANSWER_DEFAULT
+        print('# Estado de ações resetado #')
+
     def initialize_game(self):
         # Procedimento do jogo
         while True:
+            # Verificar ação de fruta pendente
+            if self.pending_action:
+                self.fruit_action()
+
             # Tempo de atualização da tela
             self.clock.tick(self.clock_value)
 
@@ -201,7 +247,8 @@ class MathSnake:
             self.eat()
 
             # Método para mudar a posição da cobrinha
-            self.snake_movements()
+            if not self.paused:
+                self.snake_movements()
 
             # Método para verificar fim de jogo
             self.game_over()

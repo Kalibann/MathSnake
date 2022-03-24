@@ -5,8 +5,10 @@ import pygame
 class Fruit():
     def __init__(self, arena, snake):
         self.fruit_sprites = None
-        self.fruit_index = None
         self.fruit_pos = None
+        self.current_fruit = None
+        self.previous_fruit = None
+        self.release_bonus_fruit = True
 
         self.initialize_fruits(arena, snake)
 
@@ -17,7 +19,23 @@ class Fruit():
             2: pygame.image.load(r'fruits/fruit2.png')
         }
         self.fruit_pos = self.on_grid_random(arena, snake)
-        self.fruit_index = self.random_fruit()
+        self.current_fruit = self.random_fruit()
+
+    def random_fruit(self):
+        # Fruta 0: para perguntas
+        # Fruta 1: bônus de valor -> não pode ter mais de um antes de responder uma pergunta
+        # Fruta 2: altera velocidade
+
+        self.previous_fruit = self.current_fruit
+        number = random.random()
+        if number > 0.4:
+            self.release_bonus_fruit = True
+            return 0
+        elif number > 0.2 and self.release_bonus_fruit:
+            self.release_bonus_fruit = False
+            return 1
+        else:
+            return 2
 
     @staticmethod
     def on_grid_random(arena_list, snake_list):
@@ -27,12 +45,4 @@ class Fruit():
                 positions.remove(coord)
         return random.choice(positions)
 
-    @staticmethod
-    def random_fruit():
-        number = random.random()
-        if number > 0.4:
-            return 0
-        elif number > 0.2:
-            return 1
-        else:
-            return 2
+
