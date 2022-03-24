@@ -40,7 +40,7 @@ class MathSnake:
     SCORE_INCREMENT_DEFAULT = 1
     SCORE_INCREMENT_BONUS = 2
 
-    def __init__(self):
+    def __init__(self, level):
         self.snake = Snake(self.LEFT)
         self.arena = Arena(self.COORD_ARENA_X, self.COORD_ARENA_Y, self.SNAKE_PX)
         self.fruit = Fruit(self.arena.arena, self.snake.snake)
@@ -51,7 +51,7 @@ class MathSnake:
         self.score_increment = self.SCORE_INCREMENT_DEFAULT
 
         self.score = 0
-        self.level = 1
+        self.level = level
         self.screen = None
 
         self.paused = False
