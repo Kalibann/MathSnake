@@ -51,7 +51,7 @@ class MathSnake:
         self.score_increment = self.SCORE_INCREMENT_DEFAULT
 
         self.score = 0
-        self.level = 2
+        self.level = 1
         self.screen = None
 
         self.paused = False
