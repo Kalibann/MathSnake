@@ -32,7 +32,7 @@ class MathSnake:
     WHITE = (255, 255, 255)
 
     # Constantes relacionadas às ações das frutas
-    CLOCK_DEFAULT = 30
+    CLOCK_DEFAULT = 4
     CLOCK_FAST = 6
     CLOCK_SLOW = 2
     TIME_TO_ANSWER_DEFAULT = 5.0
