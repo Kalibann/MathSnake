@@ -41,7 +41,14 @@ class MathSnake:
     SCORE_INCREMENT_BONUS = 2
 
     def __init__(self, level):
-        self.snake = Snake(self.LEFT)
+        self.score = 0
+        self.level = level
+        self.screen = None
+
+        self.paused = False
+        self.pending_action = False
+
+        self.snake = Snake(self.LEFT, self.level)
         self.arena = Arena(self.COORD_ARENA_X, self.COORD_ARENA_Y, self.SNAKE_PX)
         self.fruit = Fruit(self.arena.arena, self.snake.snake)
 
@@ -49,13 +56,6 @@ class MathSnake:
         self.clock_value = self.CLOCK_DEFAULT
         self.time_to_answer = self.TIME_TO_ANSWER_DEFAULT
         self.score_increment = self.SCORE_INCREMENT_DEFAULT
-
-        self.score = 0
-        self.level = level
-        self.screen = None
-
-        self.paused = False
-        self.pending_action = False
 
     @staticmethod
     def colision(block0, block1):
