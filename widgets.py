@@ -150,3 +150,9 @@ class Label:
                     x += word_width + space
                 x = self.pos[0]  # Reset the x.
                 y += word_height  # Start on new row.
+
+    def info_game(self):
+        fontsize = 32
+        font = pygame.font.Font(self.font, fontsize)
+        score = font.render("Pontuação", 1, (255, 255, 0))
+        return score
