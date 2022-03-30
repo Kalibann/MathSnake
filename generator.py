@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import random
-import current_question
-from importlib import reload
+import sys
+from subprocess import PIPE, run
 
 
 class QuestionsGenerator:
@@ -38,6 +38,7 @@ class OperationsGenerator:
         self.operation_result = None
 
         self.execution = self.execute()
+        self.func_operation = None
 
     def execute(self):
         try:
@@ -57,13 +58,13 @@ class OperationsGenerator:
 
     def generator(self, numbers, operators, k=4, pot=False, sqrt=False):
         nrs = random.choices(numbers, k=k)
-        ors = random.choices(operators, k=k-1)
+        ors = random.choices(operators, k=k - 1)
 
         if sqrt:
             prob = random.random()
             if prob > 0.8:
                 ir = random.choice(range(k))
-                nrs[ir] = '√' + str(nrs[ir]**2)
+                nrs[ir] = '√' + str(nrs[ir] ** 2)
         if pot:
             prob = random.random()
             if prob > 0.8:
@@ -80,8 +81,9 @@ class OperationsGenerator:
         self.write_operation(operation)
 
         # Obter o resultado da operação
-        reload(current_question)
-        self.operation_result = current_question.returns_result()
+        self.operation_result = run([sys.executable, "-c", self.func_operation], stdout=PIPE,
+                                    universal_newlines=True)
+        self.operation_result = float(self.operation_result.stdout)
 
     def validator(self):
         condition1 = self.operation_result >= self.LIMITS[0]
@@ -103,11 +105,15 @@ class OperationsGenerator:
                 operation[i] = item.replace('√', 'sqrt(') + ')'
 
         operation = ' '.join(operation)
-        with open(self.path_current_operation, 'w') as arq:
-            arq.write('from math import sqrt\n\n')
-            arq.write('def returns_result():\n')
-            arq.write(f'\tx = {operation}\n')
-            arq.write(f'\treturn x\n')
+
+        self.func_operation = "from math import sqrt\n\n" \
+                              "def func():\n" \
+                              "\ttry:\n" \
+                              f"\t\tx = {operation}\n" \
+                              f"\texcept:\n" \
+                              "\t\tx = -99999\n" \
+                              "\tprint(x)\n" \
+                              "func()"
 
         self.operation_in_code = operation
 
@@ -135,5 +141,6 @@ class OperationsGenerator:
         numbers = range(0, 10)
         operators = operators = ('+', '-', '*', '/', '^', '√')
         self.generator(numbers, operators)
+
 
 qg = QuestionsGenerator(3)
