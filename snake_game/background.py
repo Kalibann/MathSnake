@@ -4,6 +4,7 @@ from widgets.images import *
 from widgets.labels import Label
 from snake_game.arena import Arena
 
+
 class Background:
     def __init__(self, level, highscore):
         labels_cuts_and_pos = [
@@ -27,7 +28,6 @@ class Background:
             Label('0', (650, 480), 22),         # 13
             Arena(level)   # 14
         ]
-
 
     def draw(self, screen, scores, bonus_value, time):
         self.widgets[7].text = str(scores)

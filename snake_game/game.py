@@ -15,6 +15,7 @@ from snake_game.background import Background
 MOVE_SNAKE = USEREVENT + 1
 CREATE_FRUIT = USEREVENT + 2
 
+
 class MathSnake:
     def __init__(self, level):
         pygame.init()

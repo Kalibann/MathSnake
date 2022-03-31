@@ -52,7 +52,6 @@ class Snake:
         self.snake_parts[1].sprite = self.sprites[stu]
         self.snake_parts[-1].sprite = self.sprites[f'snake_tail_{DIRECTIONS[self.snake_parts[-2].direction]}']
 
-
         return self.events(fruits)
 
     def events(self, fruits):
@@ -60,7 +59,8 @@ class Snake:
             if tuple(self.snake_parts[0].pos) == fruit.pos:
                 fruits.pop(n)
                 self.grow()
-        if self.snake_parts[0].pos[0] == 0 or self.snake_parts[0].pos[0] == ARENA_SIZE-1 or self.snake_parts[0].pos[1] == 0 or self.snake_parts[0].pos[1] == ARENA_SIZE-1:
+        if self.snake_parts[0].pos[0] == 0 or self.snake_parts[0].pos[0] == ARENA_SIZE-1 or \
+                self.snake_parts[0].pos[1] == 0 or self.snake_parts[0].pos[1] == ARENA_SIZE-1:
             print('parede')
 
         elif self.snake_parts[0].pos in [snk.pos for snk in self.snake_parts[1:-1]]:

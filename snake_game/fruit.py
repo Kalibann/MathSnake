@@ -17,7 +17,6 @@ class Fruits:
                 aux = Fruit()
 
     def draw(self, screen):
-
         for f in self.fruits:
             f.draw(screen)
 

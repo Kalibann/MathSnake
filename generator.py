@@ -192,6 +192,3 @@ class OperationsGenerator:
         numbers = range(0, 10)
         operators = operators = ('+', '-', '*', '/')
         self.generator(numbers, operators, pot=True, sqrt=True)
-
-
-qg = QuestionsGenerator(3)
