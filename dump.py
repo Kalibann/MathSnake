@@ -132,3 +132,93 @@
 #             self.dynamic_elecation = self.elevation
 #             self.top_color = '#475F77'
 #
+# def info_game(self):
+#     self.screen.blit(self.info_label, self.INFO_LABEL)
+#
+#     score = Label('Pontuação', (650, 80), 28)
+#     score.draw(self.screen)
+#
+#     score_value = Label(str(self.score), (650, 120), 22)
+#     score_value.draw(self.screen)
+#
+#     best = Label('Melhor', (650, 200), 28)
+#     best.draw(self.screen)
+#
+#     best_value = Label(str(self.high_score), (650, 240), 22)
+#     best_value.draw(self.screen)
+#
+#     bonus = Label('Bônus', (650, 320), 28)
+#     bonus.draw(self.screen)
+#
+#     bonus_value = Label(self.bonus_value, (650, 360), 22)
+#     bonus_value.draw(self.screen)
+#
+#     time = Label('Tempo', (650, 440), 28)
+#     time.draw(self.screen)
+#
+#     time_value = Label(str(self.time_to_answer), (650, 480), 22)
+#     time_value.draw(self.screen)
+
+# class Snake:
+#     class SnakePart:
+#         def __init__(self, pos, sprite_name):
+#             self.posx = pos[0]
+#             self.posy = pos[1]
+#             self.sprite_name = sprite_name
+#             self.ishead = False
+#             self.istail = False
+#
+#         def get_sprite(self):
+#             return pygame.image.load(f'imgs/snake/snake{level}.png').subsurface(cp)
+#
+#         def draw(self, screen, arena_pos, snake_px):
+#             pos = (arena_pos[0] + snake_px * self.posx, arena_pos[1] + snake_px * self.posy)
+#             screen.blit(self.sprite, pos)
+#
+#         def go(self, direction):
+#             if direction == UP:
+#                 self.posy -= 1
+#             elif direction == DOWN:
+#                 self.posy += 1
+#             elif direction == RIGHT:
+#                 self.posx += 1
+#             else:
+#                 self.posy += 1
+#
+#     def __init__(self, level, arena_size):
+#         self.direction = rint(0, 3)
+#         self.direction = UP
+#         self.size = 3
+#         self.sprites = {k: pygame.image.load(f'imgs/snake/snake{level}.png').subsurface(cp) for k, cp in
+#                         SNAKE_CUT_POS.items()}
+#         self.snake_parts = []
+#
+#         center = arena_size // 2
+#         # Cobra incial
+#         if self.direction == UP:
+#             self.snake_parts.append(SnakePart([center, center], 'snake_head_up'))
+#             self.snake_parts.append(SnakePart([center, center + 1], 'snake_body_v'))
+#             self.snake_parts.append(SnakePart([center, center + 2], 'snake_tail_down'))
+#         elif self.direction == DOWN:
+#             self.snake_parts.append(SnakePart([center, center], 'snake_head_down'))
+#             self.snake_parts.append(SnakePart([center, center - 1], 'snake_body_v'))
+#             self.snake_parts.append(SnakePart([center, center - 2], 'snake_tail_up'))
+#         elif self.direction == RIGHT:
+#             self.snake_parts.append(SnakePart([center, center], 'snake_head_right'))
+#             self.snake_parts.append(SnakePart([center - 1, center], 'snake_body_h'))
+#             self.snake_parts.append(SnakePart([center - 2, center], 'snake_tail_left'))
+#         else:
+#             self.snake_parts.append(SnakePart([center, center], 'snake_head_right'))
+#             self.snake_parts.append(SnakePart([center + 1, center], 'snake_body_h'))
+#             self.snake_parts.append(SnakePart([center + 2, center], 'snake_tail_left'))
+#         self.snake_parts[0].ishead = True
+#         self.snake_parts[2].istail = True
+#
+#     def draw(self, screen, arena_pos, snake_px):
+#         for part in self.snake_parts:
+#             part.draw(screen, arena_pos, snake_px)
+#
+#     def move(self):
+#         self.snake_parts[0].sprite = self.sprites[f'snake_head_{DIRECTIONS[self.direction]}']
+#         for n in range(self.size):
+#             part.go(self.direction)

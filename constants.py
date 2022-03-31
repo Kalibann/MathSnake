@@ -4,7 +4,44 @@ BLACK = '#000000'
 BLUE = '#475F77'
 RED = '#D74B4B'
 BLACKER_BLUE = '#354B5E'
-DIFFICULTIES = ['Somador', 'Multiplicador', 'Calculista', 'Professor', 'Matemático']
+DIFFICULTIES = {
+    'Somador': 0,
+    'Multiplicador': 1,
+    'Calculista': 2,
+    'Professor': 3,
+    'Matemático': 4
+    }
+
+SNAKE_PX = 40
+SCREEN_SIZE = (800, 640)
+ARENA_POS = (40, 40)
+ARENA_SIZE = 12
+
+FONT_PIXELOID = r'fonts/PixeloidSans-nR3g1.ttf'
+
+SNAKE_CUT_POS = {
+            'snake_head_left': (80, 0, 40, 40),
+            'snake_head_right': (120, 0, 40, 40),
+            'snake_head_up': (160, 0, 40, 40),
+            'snake_head_down': (160, 40, 40, 40),
+            'snake_tail_right': (80, 40, 40, 40),
+            'snake_tail_left': (120, 40, 40, 40),
+            'snake_tail_down': (200, 0, 40, 40),
+            'snake_tail_up': (200, 40, 40, 40),
+            'snake_body_h': (240, 40, 40, 40),
+            'snake_body_v': (240, 0, 40, 40),
+            'snake_body_bl': (40, 40, 40, 40),
+            'snake_body_br': (0, 40, 40, 40),
+            'snake_body_tl': (40, 0, 40, 40),
+            'snake_body_tr': (0, 0, 40, 40)
+        }
+
+# Opções de movimento da cobrinha
+UP = 0
+RIGHT = 1
+DOWN = 2
+LEFT = 3
+DIRECTIONS = ['up', 'right', 'down', 'left']
 
 TXT_CREDITOS =  'Esse Tabalho foi desenvolvido pelo programadores:\n' \
                 '  Lucas Elias de Andrade Cruvinel;\n' \
@@ -27,5 +64,5 @@ TXT_AJUDA = 'Objetivo do Jogo:\n' \
             'Controles:\n' \
             'Para movimentar a cobrinha, utilize as setinhas para se movimentar para as respectivas direções (cima, baixo, esquerda e direita).\n' \
             'Para pausar, utilize a tecla de espaço.' \
-            '' \
-            ''
+
+TXT_HIGHSCORE = 'Texto highscore aqui'
