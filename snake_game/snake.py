@@ -6,7 +6,7 @@ from constants import *
 
 class Snake:
     def __init__(self, level):
-        self.pause = True
+        self.pause = False
         self.direction = rint(0, 3)
         self.size = 3
         self.queue = self.direction
