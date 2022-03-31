@@ -12,5 +12,6 @@ if __name__ == '__main__':
             exit()
 
         else:
+            print('aaa')
             game = MathSnake(command)
             game.run()

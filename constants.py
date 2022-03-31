@@ -17,6 +17,14 @@ SCREEN_SIZE = (800, 640)
 ARENA_POS = (40, 40)
 ARENA_SIZE = 12
 
+SNAKE_SPEED = 250
+BUFF_TIME = {
+    'red': 5,
+    'ylw': 3,
+    'grn': 3
+}
+TIME_TO_ANSWER = 10
+OPERATORS_ORDER = ['**', '*', '/', '+', '-']
 FONT_PIXELOID = r'fonts/PixeloidSans-nR3g1.ttf'
 
 SNAKE_CUT_POS = {

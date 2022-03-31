@@ -10,10 +10,13 @@ from snake_game.fruit import Fruit
 from constants import *
 from widgets.images import Image
 from snake_game.background import Background
+from questionary.questions import Question
 
 # Events Constants
 MOVE_SNAKE = USEREVENT + 1
 CREATE_FRUIT = USEREVENT + 2
+RETURN_NORMAL = USEREVENT + 3
+QUESTION_ON = USEREVENT + 4
 
 
 class MathSnake:
@@ -25,6 +28,7 @@ class MathSnake:
         self.high_score = 0
         self.bonus_value = 'Nenhum'
         self.screen = pygame.display.set_mode(SCREEN_SIZE)
+        self.level = level
 
         self.bg = Background(level, self.high_score)
 
@@ -32,13 +36,12 @@ class MathSnake:
         self.fruit = Fruit(self.snake.get_snake_parts_pos())
 
         self.clock = pygame.time.Clock()
-        # self.clock_value = self.CLOCK_DEFAULT
-        self.time_to_answer = 1
+        self.time_to_answer = 0
+        self.on_question = False
+        self.question = None
 
-        # self.timer_event = pygame.USEREVENT + 1
         # Eventos
-        pygame.time.set_timer(MOVE_SNAKE, 300)
-        pygame.time.set_timer(CREATE_FRUIT, 4000)
+        pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
 
     def game_events(self):
         pygame.event.pump()
@@ -62,22 +65,52 @@ class MathSnake:
             elif event.type == MOVE_SNAKE:
                 self.snake.move_snake()
 
+            elif event.type == RETURN_NORMAL:
+                self.bonus_value = 'Nenhum'
+                pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
+                pygame.time.set_timer(RETURN_NORMAL, 0)
+                self.snake.move_snake()
+
+            elif event.type == QUESTION_ON:
+                self.time_to_answer -= 1
+                if self.time_to_answer == 0:
+                    self.time_to_answer = TIME_TO_ANSWER
+                    pygame.time.set_timer(QUESTION_ON, 0)
+                    self.snake.pause = False
+                    self.on_question = False
+                    self.bonus_value = 'Nenhum'
+
+
     def validate_snake(self):
-        if self.snake.snake_parts[0].pos == self.fruit.pos:
+        pos = self.snake.snake_parts[0].pos
+        if pos == self.fruit.pos:
+            self.snake.grow()
+            self.score += 1
+            if self.fruit.type == 0:    # Vermelha
+                self.bonus_value = 'Questão'
+                self.on_question = True
+                self.snake.pause = True
+                self.question = Question(self.level)
+                self.time_to_answer = TIME_TO_ANSWER
+                pygame.time.set_timer(QUESTION_ON, self.time_to_answer * 100)
+
+            elif self.fruit.type == 1:  # Verde
+                self.bonus_value = 'Lentidão'
+                pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED*3)
+                pygame.time.set_timer(RETURN_NORMAL, BUFF_TIME['grn'] * 1000)
+            else:                       # Amarela
+                self.bonus_value = 'Velocidade'
+                pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED//2)
+                pygame.time.set_timer(RETURN_NORMAL, BUFF_TIME['ylw']*1000)
+
             self.fruit = Fruit(self.snake.get_snake_parts_pos())
 
+        elif pos[0] in [0, ARENA_SIZE-1] or pos[1] in [0, ARENA_SIZE-1]:
+            print('Parede')
 
-        # def events(self, fruits):
-        #     for n, fruit in enumerate(fruits):
-        #         if tuple(self.snake_parts[0].pos) == fruit.pos:
-        #             fruits.pop(n)
-        #             self.grow()
-        #     if self.snake_parts[0].pos[0] == 0 or self.snake_parts[0].pos[0] == ARENA_SIZE - 1 or \
-        #             self.snake_parts[0].pos[1] == 0 or self.snake_parts[0].pos[1] == ARENA_SIZE - 1:
-        #         print('parede')
-        #
-        #     elif self.snake_parts[0].pos in [snk.pos for snk in self.snake_parts[1:-1]]:
-        #         print('corpo')
+        elif pos in [snk.pos for snk in self.snake.snake_parts[1:-1]]:
+            print('corpo')
+
 
     def run(self):
         # Configurações iniciais
@@ -86,8 +119,11 @@ class MathSnake:
         # pygame.display.set_icon(self.icons[0])
 
         while True:
+
             # Desenha o Background
-            self.bg.draw(self.screen, self.score, self.bonus_value, self.time_to_answer)
+            self.bg.draw_bg(self.screen, self.score, self.bonus_value)
+            if self.on_question:
+                self.bg.draw_questions(self.screen, self.time_to_answer, self.question)
 
             # Desenha cobra
             self.snake.draw(self.screen)
