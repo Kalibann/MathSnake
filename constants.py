@@ -4,6 +4,7 @@ BLACK = '#000000'
 BLUE = '#475F77'
 RED = '#D74B4B'
 BLACKER_BLUE = '#354B5E'
+
 DIFFICULTIES = {
     'Somador': 0,
     'Multiplicador': 1,
@@ -18,12 +19,11 @@ ARENA_POS = (40, 40)
 ARENA_SIZE = 12
 
 SNAKE_SPEED = 250
-BUFF_TIME = {
-    'red': 5,
-    'ylw': 3,
-    'grn': 3
-}
-TIME_TO_ANSWER = 10
+BUFF_SPEED = 3
+
+TIME_TO_ANSWER = 3
+TIME_TO_ANSWER_SLOW = 7
+SCORE_BONUS = 3
 OPERATORS_ORDER = ['**', '*', '/', '+', '-']
 FONT_PIXELOID = r'fonts/PixeloidSans-nR3g1.ttf'
 
@@ -51,7 +51,7 @@ DOWN = 2
 LEFT = 3
 DIRECTIONS = ['up', 'right', 'down', 'left']
 
-TXT_CREDITOS =  'Esse Tabalho foi desenvolvido pelo programadores:\n' \
+TXT_CREDITS =  'Esse Tabalho foi desenvolvido pelo programadores:\n' \
                 '  Lucas Elias de Andrade Cruvinel;\n' \
                 '  -> lucascruvinel@discente.ufcat.edu.br\n\n' \
                 '  Ramon Soares Mendes de Meneses Leite;\n' \
@@ -61,7 +61,7 @@ TXT_CREDITOS =  'Esse Tabalho foi desenvolvido pelo programadores:\n' \
                 '\n' \
                 'O objetivo deste é aplicar os conhecimentos adquiridos na disciplica Fábrica de Software em um trabalho final do mesmo\n\n' \
                 'Tal disciplina é ministrada pela prof. dr. Luanna Lopes Lobato, na Universidade Federal de Catalão (UFCAT)'
-TXT_AJUDA = 'Objetivo do Jogo:\n' \
+TXT_HELP = 'Objetivo do Jogo:\n' \
             'O jogo da cobrinha tem como objetivo movimentar uma cobra por uma arena de 2D com a meta de alimentar ' \
             'a cobra com alimentos que aparecem aleatoriamente na arena. A cada alimento que a cobra come, seu tamanho aumenta em uma unidade.\n' \
             'Para vencer, é necessário fazer com que a cobra fique em seu tamanho máximo, para isso tendo que desviar dos muros nos limites da arena e desviando de seu próprio corpo.\n\n' \

@@ -48,12 +48,16 @@ class Background:
         for w in self.widget_bg:
             w.draw(screen)
 
-    def draw_questions(self, screen, time, quest):
-        quest.text = ['Pergunta', 'aaa', 'bbb', 'ccc']
+    def draw_questions(self, screen, time, question):
+        print(question['Question'])
+        print(question['Alternatives']['A'])
+        print(question['Alternatives']['B'])
+        print(question['Alternatives']['C'])
+
         self.widgets_question[5].text = str(time)
-        self.widgets_question[6].text = quest.text[0]
-        self.widgets_question[7].text = quest.text[1]
-        self.widgets_question[8].text = quest.text[2]
-        self.widgets_question[9].text = quest.text[3]
+        self.widgets_question[6].text = question['Question']
+        self.widgets_question[7].text = f"A: {question['Alternatives']['A']}"
+        self.widgets_question[8].text = f"B: {question['Alternatives']['B']}"
+        self.widgets_question[9].text = f"C: {question['Alternatives']['C']}"
         for w in self.widgets_question:
             w.draw(screen)

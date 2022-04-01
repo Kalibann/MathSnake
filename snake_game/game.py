@@ -10,7 +10,7 @@ from snake_game.fruit import Fruit
 from constants import *
 from widgets.images import Image
 from snake_game.background import Background
-from questionary.questions import Question
+from questionary.generator import QuestionsGenerator
 
 # Events Constants
 MOVE_SNAKE = USEREVENT + 1
@@ -33,12 +33,15 @@ class MathSnake:
         self.bg = Background(level, self.high_score)
 
         self.snake = Snake(level)
-        self.fruit = Fruit(self.snake.get_snake_parts_pos())
+        self.bonus_fruit = False
+        self.fruit = Fruit(self.snake.get_snake_parts_pos(), self.bonus_fruit)
 
         self.clock = pygame.time.Clock()
-        self.time_to_answer = 0
+        self.time_to_answer = TIME_TO_ANSWER
         self.on_question = False
         self.question = None
+        self.answered = False
+        self.user_answer = ''
 
         # Eventos
         pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
@@ -62,6 +65,30 @@ class MathSnake:
                 if event.key == K_SPACE:
                     self.snake.pause = not self.snake.pause
 
+                # Verificar a resposta do usuário durante o tempo de uma questão
+                if self.on_question:
+                    # Verificar resposta do usuário
+                    if self.answered:
+                        if self.user_answer == self.question.question['Result']:
+                            print('acertou')
+                        else:
+                            print('errou')
+
+                        self.on_question = False
+                        pygame.time.set_timer(QUESTION_ON, 0)
+                        self.answered = False
+
+                    # Verificar se o usuário respondeu
+                    if event.key == K_KP1:
+                        self.user_answer = self.question.question['Alternatives']['A']
+                        self.answered = True
+                    elif event.key == K_KP2:
+                        self.user_answer = self.question.question['Alternatives']['B']
+                        self.answered = True
+                    elif event.key == K_KP3:
+                        self.user_answer = self.question.question['Alternatives']['C']
+                        self.answered = True
+
             elif event.type == MOVE_SNAKE:
                 self.snake.move_snake()
 
@@ -80,37 +107,61 @@ class MathSnake:
                     self.on_question = False
                     self.bonus_value = 'Nenhum'
 
-
     def validate_snake(self):
         pos = self.snake.snake_parts[0].pos
         if pos == self.fruit.pos:
             self.snake.grow()
             self.score += 1
-            if self.fruit.type == 0:    # Vermelha
-                self.bonus_value = 'Questão'
+
+            # Vermelha
+            if self.fruit.type == 0:
                 self.on_question = True
                 self.snake.pause = True
-                self.question = Question(self.level)
-                self.time_to_answer = TIME_TO_ANSWER
+                self.question = QuestionsGenerator(self.level)
+                print(self.question.question)
                 pygame.time.set_timer(QUESTION_ON, self.time_to_answer * 100)
 
-            elif self.fruit.type == 1:  # Verde
-                self.bonus_value = 'Lentidão'
-                pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED*3)
-                pygame.time.set_timer(RETURN_NORMAL, BUFF_TIME['grn'] * 1000)
-            else:                       # Amarela
-                self.bonus_value = 'Velocidade'
-                pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED//2)
-                pygame.time.set_timer(RETURN_NORMAL, BUFF_TIME['ylw']*1000)
+                self.bonus_fruit = False
 
-            self.fruit = Fruit(self.snake.get_snake_parts_pos())
+                # Lógica para acerto e erro de perguntas (falta implementar depois das questões)
+                answer_correct = True
+                if answer_correct:
+                    if self.bonus_value == 'Pontos':
+                        self.score += SCORE_BONUS
+                    else:
+                        self.score += 1
+                else:
+                    self.score -= 1
+
+            # Verde
+            elif self.fruit.type == 1:
+                choice = random.choice(range(0, 2))
+                # Bônus 1 -> Incremento no próximo tempo de resposta
+                if choice == 0:
+                    self.bonus_value = 'Tempo'
+                    self.time_to_answer = TIME_TO_ANSWER_SLOW
+                # Bônus 2 -> Incremento no score da próxima resposta
+                else:
+                    self.bonus_value = 'Pontos'
+                self.bonus_fruit = True
+
+            # Amarela
+            else:
+                if random.choice(range(0, 2)):
+                    self.bonus_value = 'Lentidão'
+                    pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED*2)
+                else:
+                    self.bonus_value = 'Rapidez'
+                    pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED//2)
+                pygame.time.set_timer(RETURN_NORMAL, BUFF_SPEED*1000)
+
+            self.fruit = Fruit(self.snake.get_snake_parts_pos(), self.bonus_fruit)
 
         elif pos[0] in [0, ARENA_SIZE-1] or pos[1] in [0, ARENA_SIZE-1]:
             print('Parede')
 
         elif pos in [snk.pos for snk in self.snake.snake_parts[1:-1]]:
-            print('corpo')
-
+            print('Corpo')
 
     def run(self):
         # Configurações iniciais
@@ -119,11 +170,10 @@ class MathSnake:
         # pygame.display.set_icon(self.icons[0])
 
         while True:
-
             # Desenha o Background
             self.bg.draw_bg(self.screen, self.score, self.bonus_value)
             if self.on_question:
-                self.bg.draw_questions(self.screen, self.time_to_answer, self.question)
+                self.bg.draw_questions(self.screen, self.time_to_answer, self.question.question)
 
             # Desenha cobra
             self.snake.draw(self.screen)

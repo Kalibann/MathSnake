@@ -1,5 +1,5 @@
 from constants import *
-from random import randint as rint
+from random import randint as randint
 import math
 
 
@@ -29,12 +29,12 @@ class Question:
         possible_squares = [n for n in range(*numbers) if math.isqrt(n) ** 2 == n]
 
         for operation in range(n_operations):
-            operator = operators[rint(0, len(operators) - 1)]
+            operator = operators[randint(0, len(operators) - 1)]
             if operator == '√':
-                self.equation.append(['√', possible_squares[rint(0, len(possible_squares) - 1)]])
-                operator = operators[rint(1, len(operators) - 1)]
+                self.equation.append(['√', possible_squares[randint(0, len(possible_squares) - 1)]])
+                operator = operators[randint(1, len(operators) - 1)]
             else:
-                self.equation.append(rint(*numbers))
+                self.equation.append(randint(*numbers))
 
             if operation != n_operations - 1:
                 self.equation.append(operator)
@@ -52,19 +52,18 @@ class Question:
             if self.equation[n] == '**':
                 cont_pot += 1
                 if cont_pot > 1:
-                    self.equation[n] = ['/', '*', '+', '-'][rint(0, 3)]
+                    self.equation[n] = ['/', '*', '+', '-'][randint(0, 3)]
 
             if self.equation[n] == '/':
                 while self.equation[n + 1] == 0:
-                    self.equation[n + 1] = rint(*numbers)
+                    self.equation[n + 1] = randint(*numbers)
 
                 if isinstance(self.equation[n - 1], int) and isinstance(self.equation[n + 1], int):
                     while not isinstance(self.equation[n - 1] / self.equation[n + 1], int):
-                        self.equation[n - 1] = rint(*numbers)
-                        self.equation[n + 1] = rint(1, numbers[1])
+                        self.equation[n - 1] = randint(*numbers)
+                        self.equation[n + 1] = randint(1, numbers[1])
                 else:
-                    self.equation[n] = ['*', '+', '-'][rint(0, 2)]
-
+                    self.equation[n] = ['*', '+', '-'][randint(0, 2)]
 
     def solve(self, operators):
         if operators[0] == '√':
