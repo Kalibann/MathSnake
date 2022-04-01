@@ -17,6 +17,7 @@ MOVE_SNAKE = USEREVENT + 1
 CREATE_FRUIT = USEREVENT + 2
 RETURN_NORMAL = USEREVENT + 3
 QUESTION_ON = USEREVENT + 4
+COOLDOWN = USEREVENT + 5
 
 
 class MathSnake:
@@ -42,6 +43,8 @@ class MathSnake:
         self.question = None
         self.answered = False
         self.user_answer = ''
+        self.result_question = ''
+        self.score_question = ''
 
         # Eventos
         pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
@@ -83,11 +86,16 @@ class MathSnake:
                         if self.user_answer == self.question.question['Result']:
                             if self.bonus_value == 'Pontos':
                                 self.score += SCORE_BONUS
+                                self.score_question = '+' + str(SCORE_BONUS)
                             else:
                                 self.score += 1
+                                self.score_question = '+1'
+                            self.result_question = 'Acertou!'
                             print('acertou')
                         else:
                             self.score -= 1
+                            self.score_question = '-1'
+                            self.result_question = 'Errou!'
                             print('errou')
 
                         self.answered = False
@@ -109,13 +117,15 @@ class MathSnake:
             elif event.type == QUESTION_ON:
                 self.time_to_answer -= 1
                 if self.time_to_answer == 0:
+                    self.on_question = False
+                    self.snake.pause = False
+                    self.bonus_value = 'Nenhum'
                     self.time_to_answer = TIME_TO_ANSWER
                     pygame.time.set_timer(QUESTION_ON, 0)
-                    self.snake.pause = False
-                    self.on_question = False
-                    self.bonus_value = 'Nenhum'
                     if not self.answered:
                         self.score -= 1
+                        self.score_question = '-1'
+                        self.result_question = 'Não respondeu!'
                         print('não respondeu')
 
     def validate_snake(self):
@@ -174,6 +184,8 @@ class MathSnake:
             self.bg.draw_bg(self.screen, self.score, self.bonus_value)
             if self.on_question:
                 self.bg.draw_questions(self.screen, self.time_to_answer, self.question.question)
+            else:
+                self.bg.draw_result(self.screen, self.result_question, self.score_question)
 
             # Desenha cobra
             self.snake.draw(self.screen)

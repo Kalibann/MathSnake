@@ -34,11 +34,16 @@ class Background:
             answ02,
             answ03,
             Label('Tempo', (650, 440), 28),  # 12
-            Label('0', (670, 480), 22),  # 13
+            Label('0', (650, 480), 22),  # 13
             Label('', (160, 580), 22),
             Label('', (380, 580), 22),
             Label('', (540, 580), 22),
             Label('', (700, 580), 22),
+        ]
+
+        self.widget_result = [
+            Label('', (650, 440), 28),
+            Label('', (650, 480), 22)
         ]
 
     def draw_bg(self, screen, scores, bonus_value):
@@ -62,4 +67,10 @@ class Background:
         self.widgets_question[8].text = f"B: {question['Alternatives']['B']}"
         self.widgets_question[9].text = f"C: {question['Alternatives']['C']}"
         for w in self.widgets_question:
+            w.draw(screen)
+
+    def draw_result(self, screen, result, score):
+        self.widget_result[0].text = result
+        self.widget_result[1].text = score
+        for w in self.widget_result:
             w.draw(screen)
