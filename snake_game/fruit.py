@@ -22,14 +22,13 @@ from constants import *
 
 
 class Fruit:
-    CONT = 0
     def __init__(self, snake_pos, bonus_fruit):
         # Randomizar fruta
         if bonus_fruit:
             self.type = 0
         else:
             number = random()
-            if number > 0.90:
+            if number > 0.40:
                 self.type = 0
             elif number > 0.10:
                 self.type = 1

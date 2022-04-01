@@ -74,3 +74,6 @@ class Background:
         self.widget_result[1].text = score
         for w in self.widget_result:
             w.draw(screen)
+
+    def draw_game_over(self):
+        pass

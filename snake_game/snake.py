@@ -1,5 +1,5 @@
 import pygame
-from random import randint as rint
+from random import randint as randint
 from widgets.images import *
 from constants import *
 
@@ -7,7 +7,7 @@ from constants import *
 class Snake:
     def __init__(self, level):
         self.pause = False
-        self.direction = rint(0, 3)
+        self.direction = randint(0, 3)
         self.size = 3
         self.queue = self.direction
         self.sprites = {k: pygame.image.load(f'imgs/snake/snake{level}.png').subsurface(cp) for k, cp in
@@ -52,8 +52,6 @@ class Snake:
         self.snake_parts[1].sprite = self.sprites[stu]
         self.snake_parts[-1].sprite = self.sprites[f'snake_tail_{DIRECTIONS[self.snake_parts[-2].direction]}']
 
-
-
     def grow(self):
         self.size += 1
         pos = list(self.snake_parts[-1].pos)
@@ -94,7 +92,6 @@ class SnakePart:
             self.pos[0] += 1
         else:
             self.pos[0] -= 1
-
 
 def sprite_to_use(p0x, p0y, p1x, p1y, p2x, p2y):
     if p0y == p2y:

@@ -2,6 +2,7 @@ import pygame
 from widgets.images import *
 from constants import *
 
+
 class Arena:
     def __init__(self, level):
         self.pos = ARENA_POS
