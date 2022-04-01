@@ -77,7 +77,7 @@ class SnakePart:
         self.direction = direction
         self.move = True
 
-    def draw(self, screen,):
+    def draw(self, screen):
         pos = (ARENA_POS[0] + SNAKE_PX * self.pos[0], ARENA_POS[1] + SNAKE_PX * self.pos[1])
         screen.blit(self.sprite, pos)
 
