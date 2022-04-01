@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f05c51e1-ea70-455d-8d60-a9c8629c35bf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/constants.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionary/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/questionary/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questionary/questions.py" beforeDir="false" afterPath="$PROJECT_DIR$/questionary/questions.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake_game/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake_game/fruit.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/fruit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake_game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/game.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

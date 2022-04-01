@@ -49,10 +49,12 @@ class Background:
             w.draw(screen)
 
     def draw_questions(self, screen, time, question):
+        """
         print(question['Question'])
         print(question['Alternatives']['A'])
         print(question['Alternatives']['B'])
         print(question['Alternatives']['C'])
+        """
 
         self.widgets_question[5].text = str(time)
         self.widgets_question[6].text = question['Question']

@@ -67,17 +67,6 @@ class MathSnake:
 
                 # Verificar a resposta do usuário durante o tempo de uma questão
                 if self.on_question:
-                    # Verificar resposta do usuário
-                    if self.answered:
-                        if self.user_answer == self.question.question['Result']:
-                            print('acertou')
-                        else:
-                            print('errou')
-
-                        self.on_question = False
-                        pygame.time.set_timer(QUESTION_ON, 0)
-                        self.answered = False
-
                     # Verificar se o usuário respondeu
                     if event.key == K_KP1:
                         self.user_answer = self.question.question['Alternatives']['A']
@@ -88,6 +77,25 @@ class MathSnake:
                     elif event.key == K_KP3:
                         self.user_answer = self.question.question['Alternatives']['C']
                         self.answered = True
+
+                    # Verificar resposta do usuário
+                    if self.answered:
+                        if self.user_answer == self.question.question['Result']:
+                            if self.bonus_value == 'Pontos':
+                                self.score += SCORE_BONUS
+                            else:
+                                self.score += 1
+                            print('acertou')
+                        else:
+                            self.score -= 1
+                            print('errou')
+
+                        self.answered = False
+                        self.snake.pause = False
+                        self.on_question = False
+                        self.bonus_value = 'Nenhum'
+                        self.time_to_answer = TIME_TO_ANSWER
+                        pygame.time.set_timer(QUESTION_ON, 0)
 
             elif event.type == MOVE_SNAKE:
                 self.snake.move_snake()
@@ -106,6 +114,9 @@ class MathSnake:
                     self.snake.pause = False
                     self.on_question = False
                     self.bonus_value = 'Nenhum'
+                    if not self.answered:
+                        self.score -= 1
+                        print('não respondeu')
 
     def validate_snake(self):
         pos = self.snake.snake_parts[0].pos
@@ -120,18 +131,7 @@ class MathSnake:
                 self.question = QuestionsGenerator(self.level)
                 print(self.question.question)
                 pygame.time.set_timer(QUESTION_ON, self.time_to_answer * 100)
-
                 self.bonus_fruit = False
-
-                # Lógica para acerto e erro de perguntas (falta implementar depois das questões)
-                answer_correct = True
-                if answer_correct:
-                    if self.bonus_value == 'Pontos':
-                        self.score += SCORE_BONUS
-                    else:
-                        self.score += 1
-                else:
-                    self.score -= 1
 
             # Verde
             elif self.fruit.type == 1:

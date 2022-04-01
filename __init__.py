@@ -3,7 +3,7 @@ from snake_game.game import MathSnake
 
 
 if __name__ == '__main__':
-    command = 4
+    command = 3
     while True:
         if command == 'menus':
             command = Menu().initialize()
