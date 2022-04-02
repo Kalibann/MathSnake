@@ -157,7 +157,7 @@ class MathSnake:
                 self.on_question = True
                 self.snake.pause = True
                 self.question = QuestionsGenerator(self.level)
-                pygame.time.set_timer(QUESTION_ON, self.time_to_answer * 100)
+                pygame.time.set_timer(QUESTION_ON, 1000)
                 self.bonus_fruit = False
                 print(self.question.question)
 

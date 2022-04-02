@@ -28,9 +28,9 @@ class Fruit:
             self.type = 0
         else:
             number = random()
-            if number > 0.40:
+            if number > 0.90:
                 self.type = 0
-            elif number > 0.10:
+            elif number > 0.80:
                 self.type = 1
             else:
                 self.type = 2

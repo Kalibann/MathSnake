@@ -4,11 +4,8 @@
     <list default="true" id="f05c51e1-ea70-455d-8d60-a9c8629c35bf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/questionary/testes.py" beforeDir="false" afterPath="$PROJECT_DIR$/questionary/testes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake_game/arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/arena.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake_game/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/background.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake_game/fruit.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/fruit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake_game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake_game/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/snake.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +67,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/snake_game" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/snake_game/game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="generator" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -83,6 +101,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="testes (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Kaliban\Documents\GitHub\MathSnake\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/questionary" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/questionary/testes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,10 +155,14 @@
       <item itemvalue="Python.generator" />
       <item itemvalue="Python.testes" />
       <item itemvalue="Python.__init__" />
+      <item itemvalue="Python.testes (1)" />
+      <item itemvalue="Python.game" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.game" />
+        <item itemvalue="Python.testes (1)" />
         <item itemvalue="Python.testes" />
       </list>
     </recent_temporary>
