@@ -16,15 +16,27 @@ class Background:
         ]
         answ01, answ02, answ03, inf, quest = subImageCreator(f'labels/labels{str(level)}.png', labels_cuts_and_pos)
 
+        match level:
+            case 0:
+                self.labels_color = LC0
+            case 1:
+                self.labels_color = LC1
+            case 2:
+                self.labels_color = LC2
+            case 3:
+                self.labels_color = LC3
+            case 4:
+                self.labels_color = LC4
+
         self.widget_bg = [
             Image(f'background/bg{str(level)}.png', (0, 0)),  # 0
             inf,    # 1
-            Label('Pontuação', (650, 80), 28),  # 2
-            Label('0', (650, 120), 22),  # 3
-            Label('Melhor', (650, 200), 28),  # 4
-            Label(str(highscore), (650, 240), 22),  # 5
-            Label('Bônus', (650, 320), 28),  # 6
-            Label('Nenhum', (650, 360), 22),  # 7
+            Label('Pontuação', (650, 80), 26, font_color=self.labels_color),  # 2
+            Label('0', (650, 120), 22, font_color=self.labels_color),  # 3
+            Label('Melhor', (650, 200), 26, font_color=self.labels_color),  # 4
+            Label(str(highscore), (650, 240), 22, font_color=self.labels_color),  # 5
+            Label('Bônus', (650, 320), 26, font_color=self.labels_color),  # 6
+            Label('Nenhum', (650, 360), 22, font_color=self.labels_color),  # 7
             Arena(level)  # 14
         ]
 
@@ -33,17 +45,17 @@ class Background:
             answ01,
             answ02,
             answ03,
-            Label('Tempo', (650, 440), 28),  # 12
-            Label('0', (650, 480), 22),  # 13
-            Label('', (160, 580), 22),
-            Label('', (380, 580), 22),
-            Label('', (540, 580), 22),
-            Label('', (700, 580), 22),
+            Label('Tempo', (650, 440), 26, font_color=self.labels_color),  # 12
+            Label('0', (650, 480), 22, font_color=self.labels_color),  # 13
+            Label('', (160, 580), 22, font=FONT_IBM, font_color=self.labels_color),
+            Label('', (380, 580), 22, font=FONT_IBM, font_color=self.labels_color),
+            Label('', (540, 580), 22, font=FONT_IBM, font_color=self.labels_color),
+            Label('', (700, 580), 22, font=FONT_IBM, font_color=self.labels_color),
         ]
 
         self.widget_result = [
-            Label('', (650, 440), 28),
-            Label('', (650, 480), 22)
+            Label('', (650, 440), 26, font_color=self.labels_color),
+            Label('', (650, 480), 22, font_color=self.labels_color)
         ]
 
     def draw_bg(self, screen, scores, bonus_value):
@@ -66,6 +78,7 @@ class Background:
         self.widgets_question[7].text = f"A: {question['Alternatives']['A']}"
         self.widgets_question[8].text = f"B: {question['Alternatives']['B']}"
         self.widgets_question[9].text = f"C: {question['Alternatives']['C']}"
+
         for w in self.widgets_question:
             w.draw(screen)
 

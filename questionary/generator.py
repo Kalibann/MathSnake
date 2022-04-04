@@ -55,7 +55,7 @@ class QuestionsGenerator:
         self.dict_alternatives = dict(zip(['A', 'B', 'C'], alternatives))
 
         # Prints para conferir resultado
-        self.question = {'Question': ' '.join(self.operation_object.operation) + ' = ?',
+        self.question = {'Question': ' '.join(self.operation_object.operation),
                          'Result': self.operation_object.operation_result,
                          'Alternatives': self.dict_alternatives
                          }

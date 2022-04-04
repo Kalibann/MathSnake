@@ -4,6 +4,11 @@ BLACK = '#000000'
 BLUE = '#475F77'
 RED = '#D74B4B'
 BLACKER_BLUE = '#354B5E'
+LC0 = '#183925'
+LC1 = '#D6974A'
+LC2 = '#614457'
+LC3 = '#031138'
+LC4 = '#650119'
 
 DIFFICULTIES = {
     'Somador': 0,
@@ -26,6 +31,7 @@ TIME_TO_ANSWER_SLOW = 15
 SCORE_BONUS = 3
 OPERATORS_ORDER = ['**', '*', '/', '+', '-']
 FONT_PIXELOID = r'fonts/PixeloidSans-nR3g1.ttf'
+FONT_IBM = r'fonts/IBMPlexMono-SemiBold.ttf'
 
 SNAKE_CUT_POS = {
             'snake_head_left': (80, 0, 40, 40),

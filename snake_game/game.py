@@ -94,18 +94,16 @@ class MathSnake:
                             # Caso acerte
                             if self.bonus_value == 'Pontos':
                                 self.score += SCORE_BONUS
-                                self.score_question = '+' + str(SCORE_BONUS)
+                                self.score_question = '+' + str(SCORE_BONUS) + ' pontos'
                             else:
                                 self.score += 1
-                                self.score_question = '+1'
-                            self.result_question = 'Acertou!'
-                            print('acertou')
+                                self.score_question = '+1 ponto'
+                            self.result_question = 'Acertou'
                             # Caso erre
                         else:
                             self.score -= 1
-                            self.score_question = '-1'
-                            self.result_question = 'Errou!'
-                            print('errou')
+                            self.score_question = '-1 ponto'
+                            self.result_question = 'Errou'
 
                         self.answered = False
                         self.snake.pause = False
@@ -138,9 +136,8 @@ class MathSnake:
                     pygame.time.set_timer(QUESTION_ON, 0)
                     if not self.answered:
                         self.score -= 1
-                        self.score_question = '-1'
-                        self.result_question = 'Não respondeu!'
-                        print('não respondeu')
+                        self.score_question = '-1 ponto'
+                        self.result_question = 'Sem resposta'
 
     def validate_snake(self):
         pos = self.snake.snake_parts[0].pos
@@ -159,7 +156,6 @@ class MathSnake:
                 self.question = QuestionsGenerator(self.level)
                 pygame.time.set_timer(QUESTION_ON, 1000)
                 self.bonus_fruit = False
-                print(self.question.question)
 
             # Amarela
             elif self.fruit.type == 1:

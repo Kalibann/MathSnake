@@ -93,6 +93,7 @@ class SnakePart:
         else:
             self.pos[0] -= 1
 
+
 def sprite_to_use(p0x, p0y, p1x, p1y, p2x, p2y):
     if p0y == p2y:
         return 'snake_body_h'
