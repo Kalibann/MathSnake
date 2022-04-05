@@ -93,13 +93,13 @@ class MathSnake:
                 # Verificar a resposta do usuário durante o tempo de uma questão
                 if self.on_question:
                     # Verificar se o usuário respondeu
-                    if event.key == K_KP1:
+                    if event.key == K_KP1 or event.key == K_z:
                         self.user_answer = self.question.question['Alternatives']['A']
                         self.answered = True
-                    elif event.key == K_KP2:
+                    elif event.key == K_KP2 or event.key == K_x:
                         self.user_answer = self.question.question['Alternatives']['B']
                         self.answered = True
-                    elif event.key == K_KP3:
+                    elif event.key == K_KP3 or event.key == K_c:
                         self.user_answer = self.question.question['Alternatives']['C']
                         self.answered = True
 
