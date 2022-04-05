@@ -33,6 +33,8 @@ OPERATORS_ORDER = ['**', '*', '/', '+', '-']
 FONT_PIXELOID = r'fonts/PixeloidSans-nR3g1.ttf'
 FONT_IBM = r'fonts/IBMPlexMono-SemiBold.ttf'
 
+PATH_HIGHSCORE = 'snake_game/highscore.txt'
+
 SNAKE_CUT_POS = {
             'snake_head_left': (80, 0, 40, 40),
             'snake_head_right': (120, 0, 40, 40),

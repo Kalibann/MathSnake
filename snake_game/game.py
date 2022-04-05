@@ -3,6 +3,7 @@ import random
 from time import sleep
 import pygame
 from pygame.locals import *
+from snake_game.highscore import *
 
 # from pygame.locals import *
 from snake_game.snake import Snake
@@ -26,7 +27,7 @@ class MathSnake:
         pygame.display.set_caption('MathSnake')
 
         self.score = 0
-        self.high_score = 0
+        self.high_score = get_high_score()
         self.bonus_value = 'Nenhum'
         self.screen = pygame.display.set_mode(SCREEN_SIZE)
         self.level = level
@@ -227,3 +228,6 @@ class MathSnake:
 
             # Clock de 60 frames
             self.clock.tick(60)
+
+        # Salvar highscore
+        save_high_score(self.score)

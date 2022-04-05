@@ -3,7 +3,7 @@ from pygame.locals import *
 from constants import *
 from widgets.dynButton import *
 from widgets.labels import *
-
+from snake_game.highscore import *
 
 class Menu:
     def __init__(self):
@@ -14,10 +14,16 @@ class Menu:
         self.buttons = []
         self.command = None
 
+        self.highscores = get_high_score_list()
+        self.icon_menu = pygame.image.load('imgs/icons/icon0.png')
+
     def initialize(self):
         # Inicializar Pygame
         pygame.init()
         pygame.display.init()
+        pygame.display.set_caption('MathSnake')
+        pygame.display.set_icon(self.icon_menu)
+
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode(self.screen_size)
 
@@ -60,11 +66,12 @@ class Menu:
                 ],
                 'lbl': [
                     Label('Pontuação', (400, 50), 30),
-                    MultilineLabel(TXT_HIGHSCORE, (50, 100), 16, max_width=750)
+                    Label(f"{'I': <5}{'-': <5}{self.highscores[0]}", (400, 200), 22),
+                    Label(f"{'II': <5}{'-': <5}{self.highscores[1]}", (400, 250), 22),
+                    Label(f"{'III': <5}{'-': <5}{self.highscores[2]}", (400, 300), 22),
                 ]
             },
         }
-
         return self.run()
 
     def render_screen(self):
