@@ -216,11 +216,13 @@ class MathSnake:
             # Gerar nova fruta
             self.fruit = Fruit(self.snake.get_snake_parts_pos(), self.bonus_fruit)
 
+        # Game over Parede
         elif pos[0] in [0, ARENA_SIZE-1] or pos[1] in [0, ARENA_SIZE-1]:
             print('Game over - Parede')
             self.running = False
 
-        elif pos in [snk.pos for snk in self.snake.snake_parts[1:-1]]:
+        # Game over se comer
+        if pos in [snk.pos for snk in self.snake.snake_parts[1:]]:
             print('Game over - Corpo')
             self.running = False
 
