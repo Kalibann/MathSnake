@@ -15,7 +15,7 @@ class Snake:
         self.snake_parts = []
         center = ARENA_SIZE // 2
 
-        # Cobra incial
+        # Cobra inicial
         if self.direction == UP:
             self.snake_parts.append(SnakePart([center, center], self.sprites['snake_head_up'], UP))
             self.snake_parts.append(SnakePart([center, center + 1], self.sprites['snake_body_v'], UP))

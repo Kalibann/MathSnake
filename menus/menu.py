@@ -25,38 +25,38 @@ class Menu:
         self.widgets = {
             'main_menu': {
                 'btn': [
-                    minimalBtn('Ajuda', (0, 0)),
-                    minimalBtn('Créditos', (670, 0)),
+                    minimalBtn('Ajuda', (10, 10)),
+                    minimalBtn('Créditos', (650, 10)),
                     minimalBtn('Pontuação', (400, 500), pos_type='center'),
                     standardBtn('Jogar', (400, 170), pos_type='center'),
                     txtChangeBtn([*DIFFICULTIES], (400, 370), (180, 50), 22)
                 ],
                 'lbl': [
-                    Label('Math Snake', (400, 100), 36),
-                    Label('Dificuldade', (400, 300), 24)
+                    Label('Math Snake', (400, 100), 44),
+                    Label('Dificuldade', (400, 300), 32)
                 ]
             },
             'help_menu': {
                 'btn': [
-                    minimalBtn('Voltar', (680, 580))
+                    minimalBtn('Voltar', (650, 580))
                 ],
                 'lbl': [
                     Label('Ajuda', (400, 50), 30),
-                    MultilineLabel(TXT_AJUDA, (40, 100), 16, max_width=750)
+                    MultilineLabel(TXT_HELP, (40, 100), 16, max_width=750)
                 ]
             },
             'credits_menu': {
                 'btn': [
-                    minimalBtn('Voltar', (680, 580))
+                    minimalBtn('Voltar', (650, 580))
                 ],
                 'lbl': [
                     Label('Créditos', (400, 50), 30),
-                    MultilineLabel(TXT_CREDITOS, (50, 100), 16, max_width=750)
+                    MultilineLabel(TXT_CREDITS, (50, 100), 16, max_width=750)
                 ]
             },
             'highscore': {
                 'btn': [
-                    minimalBtn('Voltar', (680, 580))
+                    minimalBtn('Voltar', (650, 580))
                 ],
                 'lbl': [
                     Label('Pontuação', (400, 50), 30),
@@ -68,7 +68,12 @@ class Menu:
         return self.run()
 
     def render_screen(self):
+        menu_bg = pygame.image.load('imgs/menu/menu_bg.png')
         self.screen.fill(GRAY)
+
+        if self.screen_to_render == 'main_menu':
+            self.screen.blit(menu_bg, (0, 0))
+
         command = None
 
         # Renderiza Menus
@@ -77,16 +82,12 @@ class Menu:
                 if (aux := widget.draw(self.screen)) is not None:
                     command = aux
 
-
         if command is not None:
             return self.command_treatment(command)
 
         # Atualiza tela
         pygame.display.flip()
         self.clock.tick(60)
-
-
-
 
     def command_treatment(self, command):
         if command == 'Ajuda':
@@ -105,7 +106,6 @@ class Menu:
     def start_game(self, difficulty):
         pygame.display.quit()
         return difficulty
-
 
     def run(self):
         # Loop de display
