@@ -1,5 +1,6 @@
 import pygame
 from pygame.locals import *
+from pygame import mixer
 from constants import *
 from widgets.dynButton import *
 from widgets.labels import *
@@ -16,6 +17,7 @@ class Menu:
 
         self.highscores = get_high_score_list()
         self.icon_menu = pygame.image.load('imgs/icons/icon0.png')
+        self.music_menu = 'music/mushroom_dance.ogg'
 
     def initialize(self):
         # Inicializar Pygame
@@ -23,6 +25,11 @@ class Menu:
         pygame.display.init()
         pygame.display.set_caption('MathSnake')
         pygame.display.set_icon(self.icon_menu)
+
+        mixer.init()
+        mixer.music.load(self.music_menu)
+        mixer.music.play()
+        #mixer.music.set_volume(0.5)
 
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode(self.screen_size)
@@ -106,6 +113,7 @@ class Menu:
         elif command == 'Pontuação':
             self.screen_to_render = 'highscore'
         elif command == 'Jogar':
+            mixer.music.stop()
             return self.widgets['main_menu']['btn'][4].get_difficulty()
         else:
             print(command)

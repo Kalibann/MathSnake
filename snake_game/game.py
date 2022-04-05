@@ -6,6 +6,7 @@ from pygame.locals import *
 from snake_game.highscore import *
 
 # from pygame.locals import *
+from pygame import mixer
 from snake_game.snake import Snake
 from snake_game.fruit import Fruit
 from constants import *
@@ -55,6 +56,19 @@ class MathSnake:
         # Eventos
         pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
 
+        # Efeitos de som
+        mixer.init()
+        mixer.music.set_volume(0.2)
+        mixer.set_num_channels(3)
+
+        self.sounds = [mixer.Sound('music/Rise0.ogg'),
+                       mixer.Sound('music/Rise1.ogg'),
+                       mixer.Sound('music/Click.wav'),
+                       mixer.Sound('music/correct_sound_effect.mp3'),
+                       mixer.Sound('music/wrong_sound_effect.mp3'),
+                       mixer.Sound('music/Downer.ogg'),
+                       mixer.Sound('music/cast_iron_clangs.wav')]
+
     def game_events(self):
         pygame.event.pump()
         for event in pygame.event.get():
@@ -100,11 +114,14 @@ class MathSnake:
                                 self.score += 1
                                 self.score_question = '+1 ponto'
                             self.result_question = 'Acertou'
+                            mixer.find_channel().play(self.sounds[3])
+
                             # Caso erre
                         else:
                             self.score -= 1
                             self.score_question = '-1 ponto'
                             self.result_question = 'Errou'
+                            mixer.find_channel().play(self.sounds[4])
 
                         self.answered = False
                         self.snake.pause = False
@@ -121,6 +138,7 @@ class MathSnake:
             elif event.type == QUESTION_ON:
                 # Decrementar tempo
                 self.time_to_answer -= 1
+                mixer.find_channel().play(self.sounds[2])
 
                 # Modificar ícone
                 pygame.display.set_icon(self.icons[self.icon])
@@ -139,6 +157,7 @@ class MathSnake:
                         self.score -= 1
                         self.score_question = '-1 ponto'
                         self.result_question = 'Sem resposta'
+                        mixer.find_channel().play(self.sounds[5])
 
     def validate_snake(self):
         pos = self.snake.snake_parts[0].pos
@@ -148,6 +167,9 @@ class MathSnake:
 
             # Vermelha
             if self.fruit.type == 0:
+                # Efeito sonoro
+                mixer.find_channel().play(self.sounds[0])
+
                 # Resetar estado de velocidade
                 pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
 
@@ -160,6 +182,10 @@ class MathSnake:
 
             # Amarela
             elif self.fruit.type == 1:
+                # Efeito sonoro
+                mixer.find_channel().play(self.sounds[1])
+
+                # Randomizar entre lento e rápido
                 if random.choice(range(0, 2)):
                     self.bonus_value = 'Lentidão'
                     pygame.time.set_timer(MOVE_SNAKE, int(SNAKE_SPEED*2))
@@ -170,6 +196,9 @@ class MathSnake:
 
             # Verde
             else:
+                # Efeito sonoro
+                mixer.find_channel().play(self.sounds[1])
+
                 # Resetar estado de velocidade
                 pygame.time.set_timer(MOVE_SNAKE, SNAKE_SPEED)
 
@@ -228,6 +257,9 @@ class MathSnake:
 
             # Clock de 60 frames
             self.clock.tick(60)
+
+        # Efeito sonoro game over
+        mixer.find_channel().play(self.sounds[6])
 
         # Salvar highscore
         save_high_score(self.score)
