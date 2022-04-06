@@ -67,7 +67,9 @@ class MathSnake:
                        mixer.Sound('music/correct_sound_effect.mp3'),
                        mixer.Sound('music/wrong_sound_effect.mp3'),
                        mixer.Sound('music/Downer.ogg'),
-                       mixer.Sound('music/cast_iron_clangs.wav')]
+                       mixer.Sound('music/cast_iron_clangs.wav'),
+                       mixer.Sound('music/Chunch2.ogg')]
+
 
     def game_events(self):
         pygame.event.pump()
@@ -93,13 +95,13 @@ class MathSnake:
                 # Verificar a resposta do usuário durante o tempo de uma questão
                 if self.on_question:
                     # Verificar se o usuário respondeu
-                    if event.key == K_KP1 or event.key == K_z:
+                    if event.key == K_z:
                         self.user_answer = self.question.question['Alternatives']['A']
                         self.answered = True
-                    elif event.key == K_KP2 or event.key == K_x:
+                    elif event.key == K_x:
                         self.user_answer = self.question.question['Alternatives']['B']
                         self.answered = True
-                    elif event.key == K_KP3 or event.key == K_c:
+                    elif event.key == K_c:
                         self.user_answer = self.question.question['Alternatives']['C']
                         self.answered = True
 
@@ -219,11 +221,21 @@ class MathSnake:
         # Game over Parede
         elif pos[0] in [0, ARENA_SIZE-1] or pos[1] in [0, ARENA_SIZE-1]:
             print('Game over - Parede')
+
+            # Efeito sonoro game over
+            mixer.find_channel().play(self.sounds[6])
+
+            # Parar execução
             self.running = False
 
         # Game over se comer
         if pos in [snk.pos for snk in self.snake.snake_parts[1:]]:
             print('Game over - Corpo')
+
+            # Efeito sonoro game over
+            mixer.find_channel().play(self.sounds[7])
+
+            # Parar execução
             self.running = False
 
     def run(self):
@@ -259,9 +271,6 @@ class MathSnake:
 
             # Clock de 60 frames
             self.clock.tick(60)
-
-        # Efeito sonoro game over
-        mixer.find_channel().play(self.sounds[6])
 
         # Salvar highscore
         save_high_score(self.score)

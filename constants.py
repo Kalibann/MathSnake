@@ -81,6 +81,6 @@ TXT_HELP = 'Objetivo do Jogo:\n' \
             'Controles:\n' \
             'Para movimentar a cobrinha, utilize as setinhas para se movimentar para as respectivas direções (cima, baixo, esquerda e direita).\n' \
             'Para pausar, utilize a tecla de espaço.\n' \
-            'Para responder as perguntas, utilize o número 1 para a alternativa A, número 2 para alternativa B e número 3 para alternativa C.'
+            'Para responder as perguntas, utilize a letra Z do teclado para a alternativa A, letra X para alternativa B e letra C para alternativa C.'
 
 TXT_HIGHSCORE = 'Texto highscore aqui'
