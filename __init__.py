@@ -7,10 +7,11 @@ if __name__ == '__main__':
     while True:
         if command == 'menus':
             command = Menu().initialize()
+            print(command)
 
         elif command == 'exit':
             exit()
 
         else:
             game = MathSnake(command)
-            game.run()
+            command = game.run()

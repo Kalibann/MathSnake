@@ -21,3 +21,10 @@ class Image:
 
 def subImageCreator(img_path, cut_and_pos):
     return [subImage(Image(img_path).img.subsurface(cp), p) for cp, p in cut_and_pos]
+
+
+def blitRotateCenter(surf, image, center, angle):
+    rotated_image = pygame.transform.rotate(image, angle)
+    new_rect = rotated_image.get_rect(center=image.get_rect(center=center).center)
+
+    surf.blit(rotated_image, new_rect)

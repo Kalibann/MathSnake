@@ -2,6 +2,7 @@ import pygame
 from constants import *
 from widgets.images import *
 from widgets.labels import Label
+from widgets.dynButton import *
 from snake_game.arena import Arena
 
 
@@ -12,9 +13,10 @@ class Background:
             ((220, 0, 120, 40), (480, 560)),  # Answer 02
             ((220, 0, 120, 40), (640, 560)),  # Answer 03
             ((0, 0, 220, 480), (540, 40)),  # info
-            ((220, 40, 240, 40), (40, 560))  # question
+            ((220, 40, 240, 40), (40, 560)),  # question
+            ((220, 80, 240, 240), (160, 160))
         ]
-        answ01, answ02, answ03, inf, quest = subImageCreator(f'labels/labels{str(level)}.png', labels_cuts_and_pos)
+        answ01, answ02, answ03, inf, quest = subImageCreator(f'labels/labels{str(level)}.png', labels_cuts_and_pos[:-1])
 
         match level:
             case 0:
@@ -58,6 +60,13 @@ class Background:
             Label('', (650, 480), 22, font_color=self.labels_color)
         ]
 
+        self.widgets_gameover = [
+            subImage(Image(f'labels/labels{str(level)}.png').img.subsurface(labels_cuts_and_pos[-1][0]), labels_cuts_and_pos[-1][1]),
+            minimalBtn('Continuar', (280, 280+20), pos_type='center', size=(200, 50)),
+            minimalBtn('Menu Principal', (280, 280+80), pos_type='center', size=(200, 50)),
+            Label('Fim de jogo!', (280, 280-60), 26, font_color=self.labels_color),
+        ]
+
     def draw_bg(self, screen, scores, bonus_value):
         self.widget_bg[3].text = str(scores)
         self.widget_bg[7].text = bonus_value
@@ -88,5 +97,7 @@ class Background:
         for w in self.widget_result:
             w.draw(screen)
 
-    def draw_game_over(self):
-        pass
+    def draw_gameover(self, screen, score, highscore):
+        for w in self.widgets_gameover:
+            if (aux := w.draw(screen)) is not None:
+                return aux

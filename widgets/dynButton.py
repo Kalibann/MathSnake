@@ -4,8 +4,8 @@ import pygame
 
 # Botões de mudança de tela
 class minimalBtn(Deb):
-    def __init__(self, text, pos, pos_type='lefttop'):
-        Deb.__init__(self, text, (140, 30), pos, 22, WHITE, BLUE, BLACKER_BLUE, RED, pos_type=pos_type)
+    def __init__(self, text, pos, pos_type='lefttop', size=(140, 30)):
+        Deb.__init__(self, text, size, pos, 22, WHITE, BLUE, BLACKER_BLUE, RED, pos_type=pos_type)
 
 
 class standardBtn(Deb):

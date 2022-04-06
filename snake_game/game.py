@@ -228,6 +228,7 @@ class MathSnake:
             # Parar execução
             self.running = False
 
+
         # Game over se comer
         if pos in [snk.pos for snk in self.snake.snake_parts[1:]]:
             print('Game over - Corpo')
@@ -238,15 +239,19 @@ class MathSnake:
             # Parar execução
             self.running = False
 
+
     def run(self):
+        command = None
+
         # Configurações iniciais
         self.clock = pygame.time.Clock()
         self.icons = [pygame.image.load(f'imgs/icons/icon{i}.png') for i in range(4)]
         pygame.display.set_icon(self.icons[self.icon])
 
-        while self.running:
+        while True:
             # Desenha o Background
             self.bg.draw_bg(self.screen, self.score, self.bonus_value)
+
 
             # Caso esteja durante uma questão
             if self.on_question:
@@ -254,17 +259,30 @@ class MathSnake:
             else:
                 self.bg.draw_result(self.screen, self.result_question, self.score_question)
 
-            # Tratamento de eventos
-            self.game_events()
-
-            # Valida estado da cobra
-            self.validate_snake()
-
             # Desenha Fruta
             self.fruit.draw(self.screen)
 
             # Desenha cobra
             self.snake.draw(self.screen)
+
+            if self.running:
+                # Valida estado da cobra
+                self.validate_snake()
+
+            else:
+                # Salvar highscore
+                save_high_score(self.score)
+
+                # Desenha tela de Gameover
+                self.snake.pause = True
+                command = self.bg.draw_gameover(self.screen, self.score, self.high_score)
+                if command == 'Continuar':
+                    return self.level
+                elif command == 'Menu Principal':
+                    return 'menus'
+
+            # Tratamento de eventos
+            self.game_events()
 
             # Desenha na Tela
             pygame.display.update()
@@ -272,5 +290,4 @@ class MathSnake:
             # Clock de 60 frames
             self.clock.tick(60)
 
-        # Salvar highscore
-        save_high_score(self.score)
+
