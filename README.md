@@ -32,16 +32,16 @@ A disciplina é ministrada pela Prof. Dr. Luanna Lopes Lobato, na \nUniversidade
             
 #### TODO:
 * Prioridade Alta:
-  * Alta - Bug que a cobra não bate no rabo;
-  * Alta - Tela de game over mostrando o score e com botões 'tentar novamente' e 'ir ao menu';
+  * Bug que a cobra não bate no rabo;
+  * Tela de game over mostrando o score e com botões 'tentar novamente' e 'ir ao menu';
 * Prioridade Média:
-  * Média - Lendo imagem toda hora;
+  * Lendo imagem toda hora;
 * Prioridade Baixa:
-  * Baixa - Integrar todas as telas;
-  * Baixa - Colocar animação de destruição da cobra ao bater.
+  * Integrar todas as telas;
+  * Colocar animação de destruição da cobra ao bater.
 * Concluido: 
-  * OK - Refazer as imagens das cobrinhas para sem rastro;
-  * OK - Implementar o highscore;
-  * OK - Criar background para tela do menu; 
-  * OK - Colocar musiquinha;
-  * OK - Revisar telas de ajuda e crédito
+  * Refazer as imagens das cobrinhas para sem rastro;
+  * Implementar o highscore;
+  * Criar background para tela do menu; 
+  * Colocar musiquinha;
+  * Revisar telas de ajuda e crédito
