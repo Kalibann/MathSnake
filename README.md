@@ -35,7 +35,7 @@ A disciplina é ministrada pela Prof. Dr. Luanna Lopes Lobato, na \nUniversidade
   
   * Tela de game over mostrando o score e com botões 'tentar novamente' e 'ir ao menu';
 * Prioridade Média:
-  * Lendo imagem toda hora;
+  * 
 * Prioridade Baixa:
   * Integrar todas as telas;
   * Colocar animação de destruição da cobra ao bater.
@@ -46,3 +46,4 @@ A disciplina é ministrada pela Prof. Dr. Luanna Lopes Lobato, na \nUniversidade
   * Criar background para tela do menu; 
   * Colocar musiquinha;
   * Revisar telas de ajuda e crédito
+  * Lendo imagem toda hora;
