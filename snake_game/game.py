@@ -264,16 +264,18 @@ class MathSnake:
                 self.validate_snake()
 
             else:
-                # Salvar highscore
-                save_high_score(self.score)
+
 
                 # Desenha tela de Gameover
                 self.snake.pause = True
                 command = self.bg.draw_gameover(self.screen, self.score, self.high_score)
-                if command == 'Repetir':
-                    return self.level
-                elif command == 'Menu Principal':
-                    return 'menus'
+                if command is not None:
+                    # Salvar highscore
+                    save_high_score(self.score)
+                    if command == 'Repetir':
+                        return self.level
+                    elif command == 'Menu Principal':
+                        return 'menus'
 
             # Tratamento de eventos
             self.game_events()
