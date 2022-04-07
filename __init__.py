@@ -1,6 +1,6 @@
 from menus.menu import Menu
 from snake_game.game import MathSnake
-
+from sys import exit
 
 if __name__ == '__main__':
     command = 'menus'

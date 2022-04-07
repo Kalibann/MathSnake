@@ -6,7 +6,6 @@ from widgets.dynButton import *
 from widgets.labels import *
 from snake_game.highscore import *
 
-
 class Menu:
     def __init__(self):
         self.screen_size = (800, 640)

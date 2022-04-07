@@ -1,0 +1,117 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/__init__.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "name",
+   "value": "mathsnake"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/fonts;fonts/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/imgs;imgs/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/menus;menus/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/music;music/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/questionary;questionary/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/snake_game;snake_game/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/venv;venv/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/widgets;widgets/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Kaliban/Documents/GitHub/MathSnake/constants.py;."
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pygame"
+  },
+  {
+   "optionDest": "hiddenimports",
+   "value": "pygame.locals"
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
