@@ -1,16 +1,12 @@
-from typing import Any
 import random
-from time import sleep
 import pygame
 from pygame.locals import *
 from snake_game.highscore import *
 
-# from pygame.locals import *
 from pygame import mixer
 from snake_game.snake import Snake
 from snake_game.fruit import Fruit
 from constants import *
-from widgets.images import Image
 from snake_game.background import Background
 from questionary.generator import QuestionsGenerator
 

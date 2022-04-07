@@ -6,6 +6,7 @@ from widgets.dynButton import *
 from widgets.labels import *
 from snake_game.highscore import *
 
+
 class Menu:
     def __init__(self):
         self.screen_size = (800, 640)
@@ -40,13 +41,14 @@ class Menu:
                 'btn': [
                     minimalBtn('Ajuda', (10, 10)),
                     minimalBtn('Créditos', (650, 10)),
-                    minimalBtn('Pontuação', (400, 500), pos_type='center', size=(180, 40)),
+                    minimalBtn('Pontuação', (400, 475), pos_type='center', size=(150, 40)),
                     standardBtn('Jogar', (400, 170), pos_type='center'),
-                    txtChangeBtn([*DIFFICULTIES], (400, 370), (180, 50), 22)
+                    txtChangeBtn([*DIFFICULTIES], (400, 340), (180, 50), 22)
                 ],
                 'lbl': [
                     Label('Math Snake', (400, 100), 44),
-                    Label('Dificuldade', (400, 300), 32)
+                    Label('Dificuldade', (400, 280), 32),
+                    Label('Ranking', (400, 420), 32),
                 ]
             },
             'help_menu': {

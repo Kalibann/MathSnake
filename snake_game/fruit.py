@@ -1,4 +1,3 @@
-import pygame
 from random import random, randint
 from widgets.images import Image
 from constants import *

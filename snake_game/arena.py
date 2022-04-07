@@ -1,4 +1,3 @@
-import pygame
 from widgets.images import *
 from constants import *
 
