@@ -264,8 +264,6 @@ class MathSnake:
                 self.validate_snake()
 
             else:
-
-
                 # Desenha tela de Gameover
                 self.snake.pause = True
                 command = self.bg.draw_gameover(self.screen, self.score, self.high_score)
