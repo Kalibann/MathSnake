@@ -40,7 +40,7 @@ class Menu:
                 'btn': [
                     minimalBtn('Ajuda', (10, 10)),
                     minimalBtn('Créditos', (650, 10)),
-                    minimalBtn('Pontuação', (400, 500), pos_type='center'),
+                    minimalBtn('Pontuação', (400, 500), pos_type='center', size=(180, 40)),
                     standardBtn('Jogar', (400, 170), pos_type='center'),
                     txtChangeBtn([*DIFFICULTIES], (400, 370), (180, 50), 22)
                 ],
