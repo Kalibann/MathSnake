@@ -25,7 +25,7 @@ Esse trabalho foi desenvolvido pelo programadores:
 * Moisés Bernades Noronha Tristão;
   * Email: moisesbernardes@discente.ufcat.edu.br;
 * Ramon Soares Mendes de Meneses Leite;
-  * Email: ramonsoares@discente.ufg.br;
+  * Email: ramonsoares@discente.ufcat.edu.br;
  
 O objetivo deste é aplicar os conhecimentos adquiridos sobre desenvolvimento de software em um trabalho final da disciplina Fábrica de Software.
 A disciplina é ministrada pela Prof. Dr. Luanna Lopes Lobato, na \nUniversidade Federal de Catalão (UFCAT).
