@@ -220,25 +220,19 @@ class MathSnake:
 
         # Game over Parede
         elif pos[0] in [0, ARENA_SIZE-1] or pos[1] in [0, ARENA_SIZE-1]:
-            print('Game over - Parede')
-
             # Efeito sonoro game over
             mixer.find_channel().play(self.sounds[6])
 
             # Parar execução
             self.running = False
 
-
         # Game over se comer
         if pos in [snk.pos for snk in self.snake.snake_parts[1:]]:
-            print('Game over - Corpo')
-
             # Efeito sonoro game over
             mixer.find_channel().play(self.sounds[7])
 
             # Parar execução
             self.running = False
-
 
     def run(self):
         command = None
@@ -276,7 +270,7 @@ class MathSnake:
                 # Desenha tela de Gameover
                 self.snake.pause = True
                 command = self.bg.draw_gameover(self.screen, self.score, self.high_score)
-                if command == 'Continuar':
+                if command == 'Repetir':
                     return self.level
                 elif command == 'Menu Principal':
                     return 'menus'
@@ -289,5 +283,3 @@ class MathSnake:
 
             # Clock de 60 frames
             self.clock.tick(60)
-
-

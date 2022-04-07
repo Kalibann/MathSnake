@@ -62,7 +62,7 @@ class Background:
 
         self.widgets_gameover = [
             subImage(Image(f'labels/labels{str(level)}.png').img.subsurface(labels_cuts_and_pos[-1][0]), labels_cuts_and_pos[-1][1]),
-            minimalBtn('Continuar', (280, 280+20), pos_type='center', size=(200, 50)),
+            minimalBtn('Repetir', (280, 280+20), pos_type='center', size=(200, 50)),
             minimalBtn('Menu Principal', (280, 280+80), pos_type='center', size=(200, 50)),
             Label('Fim de jogo!', (280, 280-60), 26, font_color=self.labels_color),
         ]
