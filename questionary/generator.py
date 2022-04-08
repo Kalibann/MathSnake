@@ -185,11 +185,11 @@ class OperationsGenerator:
     # Método para gerar operações para o level teacher: 3
     def teacher(self):
         numbers = range(0, 10)
-        operators = operators = ('+', '-', '*', '/')
+        operators = ('+', '-', '*', '/')
         self.generator(numbers, operators, pot=True)
 
     # Método para gerar operações para o level mathematician : 4
     def mathematician(self):
         numbers = range(0, 10)
-        operators = operators = ('+', '-', '*', '/')
+        operators = ('+', '-', '*', '/')
         self.generator(numbers, operators, pot=True, sqrt=True)

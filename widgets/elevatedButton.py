@@ -1,6 +1,7 @@
 import pygame
 from constants import FONT_PIXELOID
 
+
 class DefaultElevatedButton:
     def __init__(self, text, size, pos, font_size, font_off_color, top_color, bottom_color,
                  top_hover_color, pos_type='lefttop', font=FONT_PIXELOID, elevation=5):
@@ -75,4 +76,3 @@ class DefaultElevatedButton:
     def action(self):
         # print('Click ' + self.text)
         return self.text
-

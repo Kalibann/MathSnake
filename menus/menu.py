@@ -6,14 +6,17 @@ from widgets.dynButton import *
 from widgets.labels import *
 from snake_game.highscore import *
 
+
 class Menu:
     def __init__(self):
-        self.screen_size = (800, 640)
+        self.clock = None
         self.screen = None
-        self.screen_to_render = 'main_menu'
-
-        self.buttons = []
+        self.widgets = None
         self.command = None
+
+        self.screen_size = (800, 640)
+        self.screen_to_render = 'main_menu'
+        self.buttons = []
 
         self.highscores = get_high_score_list()
         self.icon_menu = pygame.image.load('imgs/icons/icon0.png')
@@ -29,7 +32,6 @@ class Menu:
         mixer.init()
         mixer.music.load(self.music_menu)
         mixer.music.play()
-        #mixer.music.set_volume(0.5)
 
         self.clock = pygame.time.Clock()
         self.screen = pygame.display.set_mode(self.screen_size)
@@ -38,11 +40,11 @@ class Menu:
         self.widgets = {
             'main_menu': {
                 'btn': [
-                    minimalBtn('Ajuda', (10, 10)),
-                    minimalBtn('Créditos', (650, 10)),
-                    minimalBtn('Pontuação', (400, 475), pos_type='center', size=(150, 40)),
-                    standardBtn('Jogar', (400, 170), pos_type='center'),
-                    txtChangeBtn([*DIFFICULTIES], (400, 340), (180, 50), 22)
+                    MinimalBtn('Ajuda', (10, 10)),
+                    MinimalBtn('Créditos', (650, 10)),
+                    MinimalBtn('Pontuação', (400, 475), pos_type='center', size=(150, 40)),
+                    StandardBtn('Jogar', (400, 170), pos_type='center'),
+                    TxtChangeBtn([*DIFFICULTIES], (400, 340), (180, 50), 22)
                 ],
                 'lbl': [
                     Label('Math Snake', (400, 100), 44),
@@ -52,7 +54,7 @@ class Menu:
             },
             'help_menu': {
                 'btn': [
-                    minimalBtn('Voltar', (650, 580))
+                    MinimalBtn('Voltar', (650, 580))
                 ],
                 'lbl': [
                     Label('Ajuda', (400, 50), 30),
@@ -61,7 +63,7 @@ class Menu:
             },
             'credits_menu': {
                 'btn': [
-                    minimalBtn('Voltar', (650, 580))
+                    MinimalBtn('Voltar', (650, 580))
                 ],
                 'lbl': [
                     Label('Créditos', (400, 50), 30),
@@ -70,7 +72,7 @@ class Menu:
             },
             'highscore': {
                 'btn': [
-                    minimalBtn('Voltar', (650, 580))
+                    MinimalBtn('Voltar', (650, 580))
                 ],
                 'lbl': [
                     Label('Pontuação', (400, 50), 30),
@@ -119,10 +121,6 @@ class Menu:
         else:
             print(command)
 
-    def start_game(self, difficulty):
-        pygame.display.quit()
-        return difficulty
-
     def run(self):
         # Loop de display
         while True:
@@ -137,3 +135,8 @@ class Menu:
             if event.type == QUIT:
                 pygame.display.quit()
                 return 'exit'
+
+    @staticmethod
+    def start_game(difficulty):
+        pygame.display.quit()
+        return difficulty

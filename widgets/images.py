@@ -1,7 +1,7 @@
 import pygame
 
 
-class subImage:
+class SubImage:
     def __init__(self, surf, pos):
         self.surf = surf
         self.pos = pos
@@ -19,11 +19,11 @@ class Image:
         screen.blit(self.img, self.pos)
 
 
-def subImageCreator(img_path, cut_and_pos):
-    return [subImage(Image(img_path).img.subsurface(cp), p) for cp, p in cut_and_pos]
+def SubImageCreator(img_path, cut_and_pos):
+    return [SubImage(Image(img_path).img.subsurface(cp), p) for cp, p in cut_and_pos]
 
 
-def blitRotateCenter(surf, image, center, angle):
+def BlitRotateCenter(surf, image, center, angle):
     rotated_image = pygame.transform.rotate(image, angle)
     new_rect = rotated_image.get_rect(center=image.get_rect(center=center).center)
 

@@ -1,12 +1,12 @@
 import random
 import pygame
-from pygame.locals import *
-from snake_game.highscore import *
-
 from pygame import mixer
+from pygame.locals import *
+
+from constants import *
 from snake_game.snake import Snake
 from snake_game.fruit import Fruit
-from constants import *
+from snake_game.highscore import *
 from snake_game.background import Background
 from questionary.generator import QuestionsGenerator
 
@@ -65,7 +65,6 @@ class MathSnake:
                        mixer.Sound('music/Downer.ogg'),
                        mixer.Sound('music/cast_iron_clangs.wav'),
                        mixer.Sound('music/Chunch2.ogg')]
-
 
     def game_events(self):
         pygame.event.pump()
@@ -190,7 +189,6 @@ class MathSnake:
                 else:
                     self.bonus_value = 'Rapidez'
                     pygame.time.set_timer(MOVE_SNAKE, int(SNAKE_SPEED//2))
-                #pygame.time.set_timer(RETURN_NORMAL, BUFF_SPEED*1000)
 
             # Verde
             else:
@@ -231,8 +229,6 @@ class MathSnake:
             self.running = False
 
     def run(self):
-        command = None
-
         # Configurações iniciais
         self.clock = pygame.time.Clock()
         self.icons = [pygame.image.load(f'imgs/icons/icon{i}.png') for i in range(4)]
@@ -241,7 +237,6 @@ class MathSnake:
         while True:
             # Desenha o Background
             self.bg.draw_bg(self.screen, self.score, self.bonus_value)
-
 
             # Caso esteja durante uma questão
             if self.on_question:
@@ -262,7 +257,7 @@ class MathSnake:
             else:
                 # Desenha tela de Gameover
                 self.snake.pause = True
-                command = self.bg.draw_gameover(self.screen, self.score, self.high_score)
+                command = self.bg.draw_gameover(self.screen)
                 if command is not None:
                     # Salvar highscore
                     save_high_score(self.score)

@@ -1,23 +1,6 @@
-from random import random, randint
-from widgets.images import Image
 from constants import *
-
-# class Fruits:
-#     def __init__(self):
-#         self.fruits = []
-#
-#     def create_new(self, snake_pos):
-#         aux = Fruit()
-#         while True:
-#             if not ((aux.pos in [x.pos for x in self.fruits]) or (aux.pos in snake_pos)):
-#                 self.fruits.append(aux)
-#                 break
-#             else:
-#                 aux = Fruit()
-#
-#     def draw(self, screen):
-#         for f in self.fruits:
-#             f.draw(screen)
+from widgets.images import Image
+from random import random, randint
 
 
 class Fruit:

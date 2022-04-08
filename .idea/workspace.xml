@@ -2,229 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22229335-5969-40b0-9878-d0429384fc2c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgs/menu/menu_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/imgs/menu/menu_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menus/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menus/menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/SDL2.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/SDL2_image.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/SDL2_mixer.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/SDL2_ttf.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/VCRUNTIME140.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/__init__.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_asyncio.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_bz2.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_ctypes.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_decimal.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_hashlib.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_lzma.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_multiprocessing.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_overlapped.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_queue.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_socket.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_ssl.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/_uuid.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/altgraph-0.17.2.dist-info/zip-safe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-console-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-datetime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-debug-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-errorhandling-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-file-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-file-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-file-l2-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-handle-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-interlocked-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-libraryloader-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-localization-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-memory-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-namedpipe-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-processenvironment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-processthreads-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-processthreads-l1-1-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-profile-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-rtlsupport-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-synch-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-synch-l1-2-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-sysinfo-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-timezone-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-core-util-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-conio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-convert-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-environment-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-filesystem-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-heap-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-locale-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-math-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-process-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-runtime-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-stdio-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-string-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-time-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/api-ms-win-crt-utility-l1-1-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/cffi-1.15.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/constants.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/Apple.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/IBMPlexMono-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/PixeloidMono-1G8ae.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/PixeloidSans-nR3g1.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/fonts/PixeloidSansBold-RpeJo.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/arena/arena0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/arena/arena1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/arena/arena2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/arena/arena3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/arena/arena4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/background/bg0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/background/bg1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/background/bg2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/background/bg3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/background/bg4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/fruits/fruit0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/fruits/fruit1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/fruits/fruit2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/icons/icon0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/icons/icon1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/icons/icon2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/icons/icon3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/labels/labels0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/labels/labels1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/labels/labels2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/labels/labels3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/labels/labels4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/menu/13651.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/menu/4500_4_10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/menu/menu_bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/menu/ojbd_x37z_210506.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/snake/snake0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/snake/snake1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/snake/snake2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/snake/snake3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/snake/snake4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/imgs/snake/snake_ori.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libFLAC-8.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libcrypto-1_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libffi-7.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libfreetype-6.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libjpeg-9.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libmodplug-1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libmpg123-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libogg-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libopus-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libopusfile-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libpng16-16.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libssl-1_1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libtiff-5.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libvorbis-0.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libvorbisfile-3.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/libwebp-7.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/menus/menu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/Chunch2.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/Click.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/Downer.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/Rise0.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/Rise1.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/cast_iron_clangs.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/correct_sound_effect.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/mushroom_dance.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/music/wrong_sound_effect.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/portmidi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyexpat.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/_freetype.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/base.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/bufferproxy.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/color.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/constants.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/display.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/draw.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/event.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/font.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/freesansbold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/image.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/imageext.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/joystick.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/key.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/mask.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/math.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/mixer.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/mixer_music.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/mouse.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/pixelarray.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/pixelcopy.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/pygame_icon.bmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/rect.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/rwobject.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/scrap.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/surface.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/surflock.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/time.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pygame/transform.cp310-win_amd64.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/COPYING.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/pyinstaller-4.10.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/python310.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/questionary/generator.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/select.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/dependency_links.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/setuptools-57.0.0.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/arena.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/background.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/fruit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/game.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/highscore.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/highscore.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/snake_game/snake.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/ucrtbase.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/unicodedata.pyd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/INSTALLER" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/METADATA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/RECORD" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/WHEEL" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/entry_points.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/wheel-0.36.2.dist-info/top_level.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/widgets/dynButton.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/widgets/elevatedButton.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/widgets/images.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/widgets/labels.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/__init__/zlib1.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake_game/highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/highscore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questionary/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/questionary/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake_game/arena.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/arena.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake_game/background.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/background.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake_game/fruit.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/fruit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake_game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/snake_game/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake_game/highscore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/dynButton.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/dynButton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/elevatedButton.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/elevatedButton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets/labels.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/labels.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,17 +68,17 @@
       <method v="2" />
     </configuration>
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="MathSnake" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Kaliban\Documents\GitHub\MathSnake\venv\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />

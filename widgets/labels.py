@@ -2,6 +2,7 @@ import pygame
 from pygame.locals import *
 from constants import *
 
+
 class Label:
     def __init__(self, text, pos, font_size, font_color=WHITE, pos_type='center', font=FONT_PIXELOID):
         self.text = text
@@ -20,18 +21,11 @@ class Label:
 
         screen.blit(font, rect)
 
-# 
-#     def info_game(self):
-#         font_size = 32
-#         font = pygame.font.Font(self.font, font_size)
-#         score = font.render("Pontuação", 1, (255, 255, 0))
-#         return score
 
 class MultilineLabel(Label):
     def __init__(self, text, pos, font_size, font_color=WHITE, pos_type='center', font=FONT_PIXELOID, max_width=None):
         Label.__init__(self, text, pos, font_size, font_color=font_color, pos_type=pos_type, font=font)
         self.max_width = max_width
-
 
     def draw(self, screen):
         words = [word.split(' ') for word in self.text.splitlines()]  # 2D array where each row is a list of words.

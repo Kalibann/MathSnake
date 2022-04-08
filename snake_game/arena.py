@@ -1,5 +1,5 @@
-from widgets.images import *
 from constants import *
+from widgets.images import *
 
 
 class Arena:
@@ -18,7 +18,7 @@ class Arena:
     def draw(self, screen):
         for n_columns in range(12):
             for n_rows in range(12):
-                pos = (self.pos[0] + self.snake_px*n_rows, self.pos[1] + self.snake_px*n_columns)
+                pos = (self.pos[0] + self.snake_px * n_rows, self.pos[1] + self.snake_px * n_columns)
                 if n_columns == 0 or n_columns == 11 or n_rows == 0 or n_rows == 11:
                     screen.blit(self.wall_img, pos)
                 else:

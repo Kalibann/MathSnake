@@ -16,7 +16,7 @@ class Background:
             ((220, 40, 240, 40), (40, 560)),  # question
             ((220, 80, 240, 240), (160, 160))
         ]
-        answ01, answ02, answ03, inf, quest = subImageCreator(f'labels/labels{str(level)}.png', labels_cuts_and_pos[:-1])
+        answ01, answ02, answ03, inf, quest = SubImageCreator(f'labels/labels{str(level)}.png', labels_cuts_and_pos[:-1])
 
         match level:
             case 0:
@@ -61,9 +61,10 @@ class Background:
         ]
 
         self.widgets_gameover = [
-            subImage(Image(f'labels/labels{str(level)}.png').img.subsurface(labels_cuts_and_pos[-1][0]), labels_cuts_and_pos[-1][1]),
-            minimalBtn('Repetir', (280, 280+20), pos_type='center', size=(200, 50)),
-            minimalBtn('Menu Principal', (280, 280+80), pos_type='center', size=(200, 50)),
+            SubImage(Image(f'labels/labels{str(level)}.png').img.subsurface(labels_cuts_and_pos[-1][0]),
+                     labels_cuts_and_pos[-1][1]),
+            MinimalBtn('Repetir', (280, 280+20), pos_type='center', size=(200, 50)),
+            MinimalBtn('Menu Principal', (280, 280+80), pos_type='center', size=(200, 50)),
             Label('Fim de jogo!', (280, 280-60), 26, font_color=self.labels_color),
         ]
 
@@ -91,7 +92,7 @@ class Background:
         for w in self.widget_result:
             w.draw(screen)
 
-    def draw_gameover(self, screen, score, highscore):
+    def draw_gameover(self, screen):
         for w in self.widgets_gameover:
             if (aux := w.draw(screen)) is not None:
                 return aux
